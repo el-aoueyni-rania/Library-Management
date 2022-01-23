@@ -14,6 +14,7 @@
 
     <title>Online Library Management System</title>
 
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('static/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('static/bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('static/css/theme.css') }}" rel="stylesheet">
@@ -44,13 +45,7 @@
             text-transform: uppercase;
             font-style: bold;
         }
-        .navbar-inner{
-            background: #9400D3 !important;
-            color:#fff;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-transform: uppercase;
-            font-style: bold;
-        }
+        
     </style>
 
 

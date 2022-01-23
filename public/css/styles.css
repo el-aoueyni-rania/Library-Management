@@ -1,0 +1,17 @@
+.k
+{
+    height: 60px;
+    width: 60px;
+  border: solid ;
+  border-radius: 10px;
+  margin-right: 5px;
+  box-shadow: 5px 5px 5px black;
+}
+.navbar-inner{
+    background: #d7cb5c !important;
+    color:black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-style: bold;
+}
+
