@@ -11,7 +11,7 @@
 |
 */
 Route::get('/welcome', 'HomeController@welcome')->name('welcome');
-
+Route::get('/login', 'AccountController@getSignIn')->name('login');
 Route::get('/', function () {
     return view('welcome');
 });
