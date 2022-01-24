@@ -1,8 +1,7 @@
 <style>
 	.wrapper{
-		background-image: url({{  asset("images/library.jpg")}});
-		background-color: #cccccc;
-		height: 500px;
+		background-image: url({{  asset("images/libr.jpg")}});
+		height: 700px;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -11,7 +10,6 @@
 
     .wrapper1{
 		background-image: url({{ asset('images/books.jpg') }});
-		background-color: #cccccc;
 		height: 500px;
 		background-position: center;
 		background-repeat: no-repeat;

@@ -1,13 +1,23 @@
-<div class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-				<i class="icon-reorder shaded"></i>
-			</a>
-			
-			<a class="brand" href="{{ URL::route('home') }}" style="color:black"><img class="k" src="{{ asset('assets/img/logoiset.png') }}" /> Library Management System OF ISET Jendouba </a> 
-
-			 
+<div class="header-middle"><!--header-middle-->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="pull-left">
+					<a class = "t" style = " text-decoration : none " href="{{ URL::route('welcome') }}" >
+						<img class ="k" src="{{ asset('images/log.jfif') }}" /> 
+						<b> Library Management System OF ISET Jendouba </b>
+					</a> 
+				</div>
+				
+			</div>
+			<div class="col-sm-8">
+				<div class="shop-menu pull-right">
+					<ul class="nav navbar-nav">
+						<li><a href="" alt=""> <b>Login </b></a></li>	
+						<li><a href="" alt=""> <b> Sign Up </b></a></li>					
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</div><!--/header-middle-->

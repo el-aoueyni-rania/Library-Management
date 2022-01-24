@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/welcome', 'HomeController@welcome')->name('welcome');
 
 Route::get('/', function () {
     return view('welcome');
@@ -42,11 +43,9 @@ Route::group(array('before' => 'guest'), function() {
 	});
 
 	// Sign in (GET) 
-	Route::get('/', array(
-		'as' 	=> 'account-sign-in',
-		'uses'	=> 'AccountController@getSignIn'
-	));
 
+
+	
 	// Create an account (GET) 
 	Route::get('/create', array(
 		'as' 	=> 'account-create',
