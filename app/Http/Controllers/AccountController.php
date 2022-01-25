@@ -15,13 +15,16 @@ class AccountController extends Controller
 	/* After submitting the sign-in form */
 	public function postSignIn(Request $request) {
 		$validator = $request->validate([
-				'username' 	=> 'required',
-				'password'	=> 'required'
+			'firstname' 	=> 'required',
+			'lastname' 	=> 'required',
+			'email' 	=> 'required',
+			'password'	=> 'required',
+			'role' 	=> 'required'
 
 		]);
 		if(!$validator) {
 			// Redirect to the sign in page
-			return Redirect::route('account-sign-in')
+			return Redirect::route('login')
 				->withErrors($validator)
 				->withInput();   // redirect the input
 
@@ -29,8 +32,11 @@ class AccountController extends Controller
 
 			$remember = ($request->has('remember')) ? true : false;
 			$auth = Auth::attempt(array(
-				'username' => $request->get('username'),
-				'password' => $request->get('password')
+				'firstname' => $request->get('firstname'),
+				'lastname' => $request->get('lastname'),
+				'email' => $request->get('email'),
+				'password' => $request->get('password'),
+				'role' => $request->get('role'),
 			), $remember);
 		} 
 
@@ -40,11 +46,11 @@ class AccountController extends Controller
 
 		} else {
 			
-			return Redirect::route('account-sign-in')
+			return Redirect::route('login')
 				->with('global', 'Wrong Email or Wrong Password.');
 		}
 
-		return Redirect::route('account-sign-in')
+		return Redirect::route('login')
 			->with('global', 'There is a problem. Have you activated your account?');
 	}
 
@@ -52,9 +58,12 @@ class AccountController extends Controller
 	public function postCreate(Request $request) {
 		// dd($request->all());
 		$validator = $request->validate([
-				'username'		=> 'required|max:20|min:3|unique:users',
+				'firstname'		=> 'required|max:50',
+				'lastname'		=> 'required|max:50',
+				'email'		=> 'required|max:255|email|unique:users',
 				'password'		=> 'required',
-				'password_again'=> 'required|same:password'
+				'role'		=> 'required'
+
 		]);
 
 		if(!$validator) {
@@ -64,18 +73,24 @@ class AccountController extends Controller
 
 		} else {
 			// create an account
-			$username	= $request->get('username');
+			$firstname	= $request->get('firstname');
+			$lastname	= $request->get('lastname');
+			$email	= $request->get('email');
 			$password 	= $request->get('password');
+			$role	= $request->get('role');
 
 			$userdata = User::create([
-				'username' 	=> $username,
-				'password' 	=> Hash::make($password)	// Changed the default column for Password
+				'firstname' 	=> $firstname,
+				'lastname' 	=> $lastname,
+				'email' 	=> $email,
+				'password' 	=> Hash::make($password),
+				'role' 	=> $role	// Changed the default column for Password
 			]);
 
 			if($userdata) {			
 
 
-				return Redirect::route('account-sign-in')
+				return Redirect::route('login')
 					->with('global', 'Your account has been created. We have sent you an email to activate your account');				
 			}
 		}
@@ -93,7 +108,7 @@ class AccountController extends Controller
 	### Sign Out
 	public function getSignOut() {
 		Auth::logout();
-		return Redirect::route('account-sign-in');
+		return Redirect::route('welcome');
 	}
 
 }

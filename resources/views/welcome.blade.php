@@ -21,7 +21,7 @@
                         <div>
                             <div class="deuxx">
                                 <h1><span>New Librarian ?</span></h1>
-                                <a href="" alt=""> <h1> Sign Up</h1>  </a>
+                                <a href="{{ URL::route('account-create') }}" alt=""> <h1> Sign Up</h1>  </a>
                             </div>
                             <img class ="" src="{{ asset('images/new.jpg') }}" /> 
                         </div>

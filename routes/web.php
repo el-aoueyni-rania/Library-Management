@@ -28,6 +28,12 @@ Route::group(array('before' => 'guest'), function() {
 			'uses' => 'AccountController@postCreate'
 		));
 
+		// Create user (POST) 
+		Route::post('/create', array(
+			'as' => 'user-create-post',
+			'uses' => 'Auth\RegisterController@store'
+		));
+
 		// Sign in (POST) 
 		Route::post('/sign-in', array(
 			'as' => 'account-sign-in-post',

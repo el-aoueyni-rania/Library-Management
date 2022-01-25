@@ -14,7 +14,7 @@
 				<div class="shop-menu pull-right">
 					<ul class="nav navbar-nav">
 						<li><a href="{{ URL::route('login') }}" alt=""> <b>Login </b></a></li>	
-						<li><a href="" alt=""> <b> Sign Up </b></a></li>					
+						<li><a href="{{ URL::route('account-create') }}" alt=""> <b> Sign Up </b></a></li>					
 					</ul>
 				</div>
 			</div>
