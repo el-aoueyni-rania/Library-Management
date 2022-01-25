@@ -12,7 +12,7 @@
     <link rel="image_src" href="" />
     <link rel="canonical" href="" />
 
-    <title>Admin Dashboard</title>
+    <title>Home User</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stylereg.css') }}" rel="stylesheet">
@@ -29,16 +29,16 @@
 
 </head>
 <body>
-@include('layout.template_navbar')
+@include('layout.template_navbarUser')
 
 <div class="wrapper">
     <div class="container">
         <div class="row">
-            @include('layout.template_leftbar')
+            @include('layout.template_leftbarUser')
             <div class="span9">
-                @include('account.message')
-                @yield('content')
-            </div>
+            @include('account.message')
+            @yield('content')
+        </div>
         </div>
     </div>    
 </div>

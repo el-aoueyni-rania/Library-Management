@@ -33,12 +33,16 @@ class AccountController extends Controller
 			), $remember);
 		} 
 
-		if($auth) {
+		if(Auth::user()->role == 'admin') {
 			
 			return Redirect::intended('home');
 
+		} elseif (Auth::user()->role == 'user'){
+
+			return view('panelUser.index');
+
 		} else {
-			
+
 			return Redirect::route('login')
 				->with('global', 'Wrong Email or Wrong Password !!!');
 		}

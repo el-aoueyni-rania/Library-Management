@@ -30,6 +30,9 @@ class HomeController extends Controller
             ->with('branch_list', $this->branch_list)
             ->with('student_categories_list', $this->student_categories_list);
 	}
+    public function homeUser(){	
+		return view('panelUser.index');
+	}
     public function welcome()
     {
         return view('welcome');

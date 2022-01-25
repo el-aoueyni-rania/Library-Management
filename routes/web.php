@@ -83,6 +83,12 @@ Route::group(['middleware' => ['auth']] , function() {
 		'uses'	=> 'HomeController@home'
 	));	
 
+	// Home Page of Control Panel User
+	Route::get('/homeUser',array(
+		'as' 	=> 'homeUser',
+		'uses'	=> 'HomeController@homeUser'
+	));	
+
 	// Render Add Books panel
     Route::get('/add-books', array(
         'as' => 'add-books',
