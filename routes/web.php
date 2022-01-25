@@ -42,8 +42,6 @@ Route::group(array('before' => 'guest'), function() {
 
 	});
 
-	// Sign in (GET) 
-
 
 	
 	// Create an account (GET) 

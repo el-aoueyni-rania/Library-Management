@@ -1,11 +1,11 @@
 
 <footer id="footer"><!--Footer-->
 	<div class="footer-top">
-		<div class="container">
+		<div class="">
 			<div class="grid-container">
 						<div class="companyinfo grid-item">
-							<h2><span>E</span>-Biblio</h2>
-							<p>Cette Bibliothèque contient plusieurs catégories (Informatique , Mécanique , Eléctrique , Commerce , Génie des procédés ... ) </p>
+							<h2><span>E</span>-Library</h2>
+							<p>This Library contains mabny categories (Computer science, Mechanics, Electricity, Commerce, Process engineering, etc.)</p>
 						</div>
 						<div class="video-gallery text-center grid-item">
 								<a href="#">

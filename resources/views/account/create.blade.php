@@ -43,7 +43,7 @@
 								<button type="submit" class="btn btn-info pull-right">Create Account</button>
 							</div>
 						</div>
-						<a href="{{ URL::route('account-sign-in') }}">Already A User?</a>
+						<a href="{{ URL::route('login') }}">Already A User?</a>
 					</div>
 				</form>
 			</div>

@@ -1,4 +1,4 @@
-<div class="header-middle"><!--header-middle-->
+<div style = " background-color : gainsboro "class=" header-middle"><!--header-middle-->
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">

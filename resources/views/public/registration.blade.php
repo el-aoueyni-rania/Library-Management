@@ -73,7 +73,7 @@
 								@csrf
 							</div>
 						</div>
-						<a href="{{ URL::route('account-sign-in') }}">Go Back!</a>
+						<a href="{{ URL::route('login') }}">Go Back!</a>
 					</div>
 				</form>
 			</div>
