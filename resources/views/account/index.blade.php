@@ -30,7 +30,6 @@
 </head>
 <body>
     @include('account.navigation_top')
-    @include('account.message')
     @yield('content')
     @include('account.navigation_bottom')
 

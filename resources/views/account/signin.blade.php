@@ -12,21 +12,27 @@
 <body>
     <br>
     <br>
+    <form class="form-vertical" action="{{ URL::route('account-sign-in-post') }}" method="POST">
+        @csrf
         <div class="cont">
             <div class="sub-cont">
                 <div class="form sign-up">
                     <h2>Welcome</h2>
+                    <label for="">
+                        @include('account.message')
+                    </label>
                 <label>
                     <span>Email</span>
-                    <input type="email" />
+                    <input type="email" name="email" value="{{ Request::old('email') }}" autofocus required/>
                 </label>
                 <label>
                     <span>Password</span>
-                    <input type="password" />
+                    <input type="password" name="password" required/>
+                    
                 </label>
                 <p class="forgot-pass">Forgot password?</p>
-                <button type="button" class="submit">Sign In</button>
-             
+                <button type="submit" class="submit">Login</button>
+                
 					<label for="">
 							<span style = " color : gray" class="txt1">
 								New librarian? 
@@ -42,6 +48,6 @@
 				<img class ="imaa" src="{{ asset('images/logg.png') }}" /> 
 			</div>
         </div>
-    
+    </form>
 </body>
 </html>
