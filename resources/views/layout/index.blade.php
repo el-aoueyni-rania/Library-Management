@@ -31,8 +31,7 @@
 <body>
 @include('layout.template_navbar')
 
-<div class="wrapper">
-    <div class="container">
+<div style="padding: 20px">
         <div class="row">
             @include('layout.template_leftbar')
             <div class="span9">
@@ -40,7 +39,6 @@
                 @yield('content')
             </div>
         </div>
-    </div>    
 </div>
 
 @include('account.navigation_bottom')

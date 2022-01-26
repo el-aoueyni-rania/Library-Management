@@ -31,16 +31,14 @@
 <body>
 @include('layout.template_navbarUser')
 
-<div class="wrapper">
-    <div class="container">
+<div style="padding: 30px">
         <div class="row">
             @include('layout.template_leftbarUser')
             <div class="span9">
-            @include('account.message')
-            @yield('content')
-        </div>
-        </div>
-    </div>    
+                @include('account.message')
+                @yield('content')
+            </div>
+        </div>    
 </div>
 
 @include('account.navigation_bottom')
