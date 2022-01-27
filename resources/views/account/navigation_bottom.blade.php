@@ -45,8 +45,8 @@
 						</div>
 			</div>
 			<div class="row align-items-center grid-container2">
-				<div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
-				<div class="col-lg-4 text-lg-end">
+				<div class="col-lg-6 text-lg-start">Copyright &copy; Your Website 2022</div>
+				<div class="col-lg-6 text-lg-end">
 					<a  style = " text-decoration : none ; color : grey " href="#!">Privacy Policy</a>
 					<a  style = " text-decoration : none  ; color : grey " href="#!">Terms of Use</a>
 				</div>

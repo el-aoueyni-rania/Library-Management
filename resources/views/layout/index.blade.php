@@ -8,19 +8,18 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
-    <link rel="shortcut icon" href="">
-    <link rel="image_src" href="" />
-    <link rel="canonical" href="" />
-
     <title>Admin Dashboard</title>
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/stylereg.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css2/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/stylereg.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/responsive.css') }}" rel="stylesheet">
+    
     <link type="text/css" href="{{asset('static/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link type="text/css" href="{{asset('static/bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
     <link type="text/css" href="{{asset('static/css/theme.css') }}" rel="stylesheet">
     <link type="text/css" href="{{asset('static/images/icons/css/font-awesome.css') }}" rel="stylesheet">
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>

@@ -11,12 +11,12 @@
     <link rel="shortcut icon" href="">
     <link rel="image_src" href="" />
     <link rel="canonical" href="" />
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/stylereg.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/stylereg.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/responsive.css') }}" rel="stylesheet">
 
 
 
