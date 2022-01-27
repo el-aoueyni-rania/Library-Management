@@ -26,13 +26,6 @@
   color:#fff;
 }
 
-.widget-menu{
-  background: #9400D3 !important;
-  color:#fff;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-transform: uppercase;
-  font-style: bold;
-}
 html, body {
   background-color: #fff;
   color: #636b6f;
@@ -112,20 +105,5 @@ html, body {
 }
 .module-head h3{
   color:#fff;
-}
-
-.widget-menu{
-  background: #9400D3 !important;
-  color:#fff;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-transform: uppercase;
-  font-style: bold;
-}
-.navbar-inner{
-  background: #9400D3 !important;
-  color:#fff;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-transform: uppercase;
-  font-style: bold;
 }
 

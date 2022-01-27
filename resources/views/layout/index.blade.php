@@ -10,7 +10,9 @@
 
     <title>Admin Dashboard</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css2/ruang-admin.min.css') }}" rel="stylesheet">
+
 
     <link href="{{ asset('css2/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('css2/main.css') }}" rel="stylesheet">
@@ -33,7 +35,7 @@
 <div style="padding: 20px">
         <div class="row">
             @include('layout.template_leftbar')
-            <div class="span9">
+            <div class="span10">
                 @include('account.message')
                 @yield('content')
             </div>
@@ -44,6 +46,8 @@
     
 
 <script src="{{asset('static/scripts/jquery-1.9.1.min.js') }}" type="text/javascript"></script>
+<script src="{{asset('js2/Chart.min.js') }}" type="text/javascript"></script>
+<script src="{{asset('js2/chart-area-demo.js') }}" type="text/javascript"></script>
 <script src="{{asset('static/scripts/jquery-ui-1.10.1.custom.min.js') }}" type="text/javascript"></script>
 <script src="{{asset('static/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('static/scripts/underscore-min.js') }}" type="text/javascript"></script>
