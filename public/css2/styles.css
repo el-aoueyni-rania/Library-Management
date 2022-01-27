@@ -1,7 +1,7 @@
 .k
 {
   height: 60px;
-  width: 100px;
+  width: 60px;
 }
 .t{
   font-size: 20px;
@@ -107,3 +107,9 @@ html, body {
   color:#fff;
 }
 
+.bbb{
+  margin-left: 20px;
+  font-size: 25px;
+	line-height: 25px;
+	height: 25px
+}

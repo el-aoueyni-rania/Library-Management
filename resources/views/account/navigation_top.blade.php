@@ -4,7 +4,7 @@
 			<div class="col-sm-4">
 				<div class="pull-left">
 					<a class = "t" style = " text-decoration : none " href="{{ URL::route('welcome') }}" >
-						<img class ="k" src="{{ asset('images/jj.gif') }}" /> 
+						<img class ="k" src="{{ asset('images/log.jfif') }}" /> 
 						<b> Library Management System OF ISET Jendouba </b>
 					</a> 
 				</div>
