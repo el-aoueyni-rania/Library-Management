@@ -53,7 +53,7 @@
                 </div>
                 <div class="control-group">
                     <div class="controls">
-                        <button type="button" class="btn btn-inverse" id="addbooks">Add Books</button>
+                        <button type="button" class="btn btn-inverse" id="addbooks">Add Book</button>
                     </div>
                 </div>
             </form>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\BookCategories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class CategoryController extends Controller
 {
@@ -14,7 +16,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+
+        $category_list = DB::table('book_categories')->get();
+
+        return view('panel.addbookcategory', ['category_list' => $category_list]);
     }
 
     /**
@@ -27,11 +32,6 @@ class CategoryController extends Controller
         //
     }
 
-
-    public function renderAddBookCategory(Type $var = null)
-	{
-        return view('panel.addbookcategory');
-	}
 
     /**
      * Store a newly created resource in storage.

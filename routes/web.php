@@ -73,15 +73,47 @@ Route::group(array('before' => 'guest'), function() {
 // Main books Controlller left public so that it could be used without logging in too
 Route::resource('/books', 'BooksController');
 
+
+
+
+
+
+
+
 // Authenticated group 
 // Route::group(array('before' => 'auth'), function() {
 Route::group(['middleware' => ['auth']] , function() {
 
-	// Home Page of Control Panel
+	// Home Page of Control Panel Admmin
 	Route::get('/home',array(
 		'as' 	=> 'home',
 		'uses'	=> 'HomeController@home'
-	));	
+	));
+	
+	// Render All Books panel admin
+    Route::get('/all-books', array(
+        'as' => 'all-books',
+        'uses' => 'BooksController@renderAllBooks'
+	));
+
+	// Render Add Books panel admin
+    Route::get('/add-books', array(
+        'as' => 'add-books',
+        'uses' => 'BooksController@renderAddBooks'
+	));
+
+	//  Add Category panel admin
+	Route::get('/add-book-category', array(
+        'as' => 'add-book-category',
+        'uses' => 'CategoryController@index'
+	));
+	
+
+	Route::post('/add-categoryform', array(
+        'as' => 'add-categoryform',
+        'uses' => 'CategoryController@store'
+	)); 
+
 
 	// Home Page of Control Panel User
 	Route::get('/homeUser',array(
@@ -89,11 +121,6 @@ Route::group(['middleware' => ['auth']] , function() {
 		'uses'	=> 'HomeController@homeUser'
 	));	
 
-	// Render Add Books panel admin
-    Route::get('/add-books', array(
-        'as' => 'add-books',
-        'uses' => 'BooksController@renderAddBooks'
-	));
 
 	// Render Add Books panel user
     Route::get('/add-bookuser', array(
@@ -106,31 +133,29 @@ Route::group(['middleware' => ['auth']] , function() {
         'uses' => 'BooksUserController@store'
 	)); 
 
-	//  Add Category panel admin
-	Route::get('/add-book-category', array(
-        'as' => 'add-book-category',
-        'uses' => 'CategoryController@renderAddBookCategory'
-	));
-	
-	Route::post('/add-categoryform', array(
-        'as' => 'add-categoryform',
-        'uses' => 'CategoryController@store'
-	)); 
-
-	Route::post('/bookcategory', 'BooksController@BookCategoryStore')->name('bookcategory.store');
-	
-
-	// Render All Books panel admin
-    Route::get('/all-books', array(
-        'as' => 'all-books',
-        'uses' => 'BooksController@renderAllBooks'
-	));
 
 	// Render All Books panel user
     Route::get('/all-booksuser', array(
-        'as' => 'all-booksuser',
-        'uses' => 'BooksUserController@index'
-	));
+	'as' => 'all-booksuser',
+	'uses' => 'BooksUserController@index'
+    ));
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	Route::post('/bookcategory', 'BooksController@BookCategoryStore')->name('bookcategory.store');
+	
+
+
 	
 	Route::get('/bookBycategory/{cat_id}', array(
         'as' => 'bookBycategory',

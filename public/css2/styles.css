@@ -15,16 +15,6 @@
     text-transform: uppercase;
     font-style: bold;
 }
-.module-head{
-  background-color: #9400D3;
-  color:#fff;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-transform: uppercase;
-  font-style: bold;
-}
-.module-head h3{
-  color:#fff;
-}
 
 html, body {
   background-color: #fff;
@@ -97,15 +87,17 @@ html, body {
 }
 
 .module-head{
-  background-color: #9400D3;
-  color:#fff;
+  background-color: gainsboro ;
+  padding: 10px 15px;
+  border-color: #e9e9e9;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-transform: uppercase;
   font-style: bold;
 }
-.module-head h3{
-  color:#fff;
-}
+
 
 .bbb{
   margin-left: 10px;
@@ -113,3 +105,34 @@ html, body {
 	line-height: 25px;
 	height: 25px
 }
+
+
+.main-container {
+  padding: 30px;
+}
+
+
+.cardsss {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.carddd {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  min-height: 60px;
+  display: grid;
+  grid-template-rows: 20px 50px 1fr 50px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+
+.card-1 {
+  background: gainsboro;
+}
+
