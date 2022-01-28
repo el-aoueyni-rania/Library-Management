@@ -79,61 +79,33 @@ class BooksController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		$books = $request->all();
 		
-		// DB::transaction( function() use($books) {
-			// dd($books);
-			$db_flag = false;
-			$user_id = Auth::id();
-
-
-			/*  if($request->hasFile('photo')){
-				$photo = $request->file('photo');
-				$filename = time() . '.' . $photo->getClientOriginalExtension();
-				$photo->move('uploads/books/' , $filename);
-			 } */
-				$book_title = Books::create([
-					'title'			=> $request->title,
-					'author'		=>  $request->author,
-					'description' 	=>  $request->description,
-					'photo'         =>  'hhhhh',
-					'category_id'	=>  $request->category_id,
-					'added_by'		=>  $request->added_by,
-				]);
 
 			
 
+		if($request->hasFile('photo')){
+			$photo = $request->file('photo');
+			$filename = time() . '.' . $photo->getClientOriginalExtension();
+			$photo->move('uploads/books/' , $filename);
+		 }
 
-			
-			// dd($book_title);
-			$newId = $book_title->book_id;
-			// dd($newId);
-			if(!$book_title){
-				$db_flag = true;
-			} else {
-				$number_of_issues = $books['number'];
 
-				for($i=0; $i<$number_of_issues; $i++){
+		$user_id = Auth::id();
 
-					$issues = Issue::create([
-						'book_id'	=> $newId,
-						'added_by'	=> $user_id
-					]);
+		$book = new Books;
+		$book->title = $request->title;
+		$book->author = $request->author;
+		$book->description = $request->description;
 
-					if(!$issues){
-						$db_flag = true;
-					}
-				}
-			}
 
-			if($db_flag)
-				return'Invalid update data provided';
+		$book->photo = $filename;
 
-		// });
+		$book->category_id = $request->category;
+		$book->added_by =$user_id ;
+		$book->save();
+		return redirect()->route('add-books', $book)->with('storeBook' , 'Book Added successfully to Database !!!');
 
-		return "Books Added successfully to Database";
-
-	}
+		}
 
 
 	public function BookCategoryStore(Request $request)

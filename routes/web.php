@@ -102,6 +102,11 @@ Route::group(['middleware' => ['auth']] , function() {
         'uses' => 'BooksController@renderAddBooks'
 	));
 
+	Route::post('/add-bookform', array(
+        'as' => 'add-bookform',
+        'uses' => 'BooksController@store'
+	));
+
 	//  Add Category panel admin
 	Route::get('/add-book-category', array(
         'as' => 'add-book-category',

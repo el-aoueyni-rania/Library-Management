@@ -62,7 +62,7 @@
 
                 <div class="control-group">
                     <div class="controls">
-                        <button type="submit" class="btn btn-inverse" id="">Add Books</button>
+                        <button type="submit" class="btn btn-inverse" id="">Add Book</button>
                     </div>
                 </div>
             </form>
