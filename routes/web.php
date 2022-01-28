@@ -89,13 +89,13 @@ Route::group(['middleware' => ['auth']] , function() {
 		'uses'	=> 'HomeController@homeUser'
 	));	
 
-	// Render Add Books panel
+	// Render Add Books panel admin
     Route::get('/add-books', array(
         'as' => 'add-books',
         'uses' => 'BooksController@renderAddBooks'
 	));
 
-	// Render Add Books panel
+	// Render Add Books panel user
     Route::get('/add-bookuser', array(
         'as' => 'add-bookuser',
         'uses' => 'BooksUserController@renderAddBookuser'
@@ -114,10 +114,16 @@ Route::group(['middleware' => ['auth']] , function() {
 	Route::post('/bookcategory', 'BooksController@BookCategoryStore')->name('bookcategory.store');
 	
 
-	// Render All Books panel
+	// Render All Books panel admin
     Route::get('/all-books', array(
         'as' => 'all-books',
         'uses' => 'BooksController@renderAllBooks'
+	));
+
+	// Render All Books panel user
+    Route::get('/all-booksuser', array(
+        'as' => 'all-booksuser',
+        'uses' => 'BooksUserController@index'
 	));
 	
 	Route::get('/bookBycategory/{cat_id}', array(

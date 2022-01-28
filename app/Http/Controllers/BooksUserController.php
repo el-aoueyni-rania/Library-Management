@@ -34,32 +34,10 @@ class BooksUserController extends Controller
 	public function index()
 	{
 
-		$book_list = Books::select('book_id','title','author','description','book_categories.category')
-		->join('book_categories', 'book_categories.id', '=', 'books.category_id')
-			->orderBy('book_id')->get();
-		// dd($book_list);
-		// $this->filterQuery($book_list);
+		$book_list = DB::table('books')->get();
 
-		// $book_list = $book_list->get();
+        return view('panelUser.allbookuser', ['book_list' => $book_list]);
 
-		for($i=0; $i<count($book_list); $i++){
-
-	        $id = $book_list[$i]['book_id'];
-	        $conditions = array(
-	        	'book_id'			=> $id,
-	        	'available_status'	=> 1
-        	);
-
-	        $book_list[$i]['total_books'] = Issue::select()
-	        	->where('book_id','=',$id)
-	        	->count();
-
-	        $book_list[$i]['avaliable'] = Issue::select()
-	        	->where($conditions)
-	        	->count();
-		}
-
-        return $book_list;
 	}
 
 
@@ -247,12 +225,6 @@ class BooksUserController extends Controller
 	}
 
 
-    public function renderAddBooks() {
-        $db_control = new HomeController();
-
-        return view('panel.addbook')
-            ->with('categories_list', $db_control->categories_list);
-    }
 
 	public function renderAddBookuser() {
         $db_control = new HomeController();
@@ -261,13 +233,6 @@ class BooksUserController extends Controller
             ->with('categories_list', $db_control->categories_list);
     }
 
-
-    public function renderAllBooks() {
-        $db_control = new HomeController();
-
-		return view('panel.allbook')
-            ->with('categories_list', $db_control->categories_list);
-	}
 	
 	public function BookByCategory($cat_id)
 	{

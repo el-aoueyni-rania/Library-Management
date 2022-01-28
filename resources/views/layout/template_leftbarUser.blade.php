@@ -1,5 +1,6 @@
 <div class="span3" >
     <div class="sidebar" >
+        <br><br><br><br><br>
         <ul class="widget widget-menu unstyled">
             <li>
                 <a href="{{ URL::route('homeUser') }}">
@@ -8,7 +9,7 @@
             </li>
             
             <li>
-                <a href="#">
+                <a href="{{ URL::route('all-booksuser') }}">
                     <i class="menu-icon icon-th-list"></i><strong> All Books in Library </strong> 
                 </a>
             </li>
