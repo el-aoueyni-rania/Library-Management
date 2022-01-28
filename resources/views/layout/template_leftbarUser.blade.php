@@ -20,7 +20,7 @@
             </li>
            
             <li>
-                <a href="#">
+                <a href="{{ URL::route('add-bookuser') }}">
                     <i class="menu-icon fas fa-plus"></i><strong> Add Book </strong> 
                 </a>
             </li>

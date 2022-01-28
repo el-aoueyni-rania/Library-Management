@@ -7,10 +7,7 @@
             <h1 class="btn-box span12" >
                 <span style="color:#1456a0"> Library Management System Of Iset Jendouba</span>
             </h1>
-        </div>
-
-        
-        
+        </div> 
     </div>    
 </div>
 @stop

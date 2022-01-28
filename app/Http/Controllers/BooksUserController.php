@@ -13,11 +13,13 @@ use App\Models\BookCategories;
 use App\Models\StudentCategories;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\UploadedFile;
 use App\Http\Controllers\HomeController;
 use Exception;
 
-class BooksController extends Controller
+class BooksUserController extends Controller
 {
+    
     public function __construct(){
 
 		$this->filter_params = array('category_id');
@@ -79,61 +81,32 @@ class BooksController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		$books = $request->all();
 		
-		// DB::transaction( function() use($books) {
-			// dd($books);
-			$db_flag = false;
-			$user_id = Auth::id();
 
-
-			/*  if($request->hasFile('photo')){
+			 if($request->hasFile('photo')){
 				$photo = $request->file('photo');
 				$filename = time() . '.' . $photo->getClientOriginalExtension();
 				$photo->move('uploads/books/' , $filename);
-			 } */
-				$book_title = Books::create([
-					'title'			=> $request->title,
-					'author'		=>  $request->author,
-					'description' 	=>  $request->description,
-					'photo'         =>  'hhhhh',
-					'category_id'	=>  $request->category_id,
-					'added_by'		=>  $request->added_by,
-				]);
-
-			
+			 }
 
 
-			
-			// dd($book_title);
-			$newId = $book_title->book_id;
-			// dd($newId);
-			if(!$book_title){
-				$db_flag = true;
-			} else {
-				$number_of_issues = $books['number'];
+			$user_id = Auth::id();
 
-				for($i=0; $i<$number_of_issues; $i++){
+			$book = new Books;
+			$book->title = $request->title;
+			$book->author = $request->author;
+			$book->description = $request->description;
 
-					$issues = Issue::create([
-						'book_id'	=> $newId,
-						'added_by'	=> $user_id
-					]);
+	
+			$book->photo = $filename;
 
-					if(!$issues){
-						$db_flag = true;
-					}
-				}
+			$book->category_id = $request->category;
+			$book->added_by =$user_id ;
+			$book->save();
+			return redirect()->route('add-bookuser', $book)->with('storeBookUser' , 'Book Added successfully to Database !!!');
+
 			}
-
-			if($db_flag)
-				return'Invalid update data provided';
-
-		// });
-
-		return "Books Added successfully to Database";
-
-	}
+			
 
 
 	public function BookCategoryStore(Request $request)
@@ -278,6 +251,13 @@ class BooksController extends Controller
         $db_control = new HomeController();
 
         return view('panel.addbook')
+            ->with('categories_list', $db_control->categories_list);
+    }
+
+	public function renderAddBookuser() {
+        $db_control = new HomeController();
+
+        return view('panelUser.addbookuser')
             ->with('categories_list', $db_control->categories_list);
     }
 

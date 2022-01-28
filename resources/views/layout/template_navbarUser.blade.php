@@ -9,10 +9,10 @@
 					</a> 
 				</div>
 			</div>
-			<div class="col-sm-7">
+			<div class="col-sm-6">
 				<div class="shop-menu " >
 					<ul class="nav navbar-nav" style="display: inline; ">
-						<li style=" margin-left : 50px ; ">
+						<li style=" margin-left : 20px ; ">
 							<a href="#" alt=""> <strong> <i class="fas fa-home bbb"></i>  </strong></a></li>	
 						<li><a href="#" alt=""> <strong> <i class="fas fa-book bbb" ></i> Books </strong></a></li>	
 						<li><a href="#" alt=""> <strong> <i class="fas fa-list bbb"></i> List Of Borrowed Books </strong></a></li>
@@ -21,7 +21,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-sm-1">
+			<div class="col-sm-2">
 				<div class="shop-menu pull-right">
 					<ul style="margin-top : 10px ; " class="nav navbar-nav">
 						<li class="nav-user "><a href="#" class="" data-toggle="dropdown">

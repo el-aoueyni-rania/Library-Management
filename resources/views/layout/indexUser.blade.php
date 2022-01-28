@@ -36,7 +36,9 @@
         <div class="row">
             @include('layout.template_leftbarUser')
             <div class="span9">
+                <div style="margin-left : 30px">
                 @include('account.message')
+            </div>
                 @yield('content')
             </div>
         </div>    

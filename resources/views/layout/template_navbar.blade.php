@@ -9,14 +9,14 @@
 					</a> 
 				</div>
 			</div>
-			<div class="col-sm-7">
+			<div class="col-sm-6">
 				<div class="shop-menu " >
 					<ul class="nav navbar-nav" style="display: inline; ">
 									
 					</ul>
 				</div>
 			</div>
-			<div class="col-sm-1">
+			<div class="col-sm-2">
 				<div class="shop-menu pull-right">
 					<ul style="margin-top : 10px ; " class="nav navbar-nav">
 						<li class="nav-user "><a href="#" class="" data-toggle="dropdown">
