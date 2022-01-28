@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class BookCategories extends Model
 {
-    protected $fillable = ['category'];
+    protected $fillable = array('category' , 'photoC');
 }

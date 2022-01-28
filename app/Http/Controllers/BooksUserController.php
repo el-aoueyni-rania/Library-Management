@@ -219,13 +219,6 @@ class BooksUserController extends Controller
 		//
 	}
 
-	public function renderAddBookCategory(Type $var = null)
-	{
-        return view('panel.addbookcategory');
-	}
-
-
-
 	public function renderAddBookuser() {
         $db_control = new HomeController();
 

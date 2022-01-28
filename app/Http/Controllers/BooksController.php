@@ -268,12 +268,6 @@ class BooksController extends Controller
 		//
 	}
 
-	public function renderAddBookCategory(Type $var = null)
-	{
-        return view('panel.addbookcategory');
-	}
-
-
     public function renderAddBooks() {
         $db_control = new HomeController();
 

@@ -36,7 +36,10 @@
         <div class="row">
             @include('layout.template_leftbar')
             <div class="span10">
-                @include('account.message')
+                <div style="margin-left: 30px">
+                    @include('account.message')
+
+                </div>
                 @yield('content')
             </div>
         </div>
