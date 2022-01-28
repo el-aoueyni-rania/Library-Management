@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
+use App\Models\BookCategories;
+
 use Exception;
 
 class AccountController extends Controller
@@ -39,7 +42,13 @@ class AccountController extends Controller
 
 		} elseif (Auth::user()->role == 'user'){
 
-			return view('panelUser.index');
+
+			$category_list = DB::table('book_categories')->get();
+
+			return view('panelUser.index', ['category_list' => $category_list]);
+
+
+			// return view('panelUser.index');
 
 		} else {
 
