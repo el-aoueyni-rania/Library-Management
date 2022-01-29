@@ -147,6 +147,11 @@ Route::group(['middleware' => ['auth']] , function() {
 
 
 
+    // Render All Books panel user
+    Route::get('/all-bookscategoryuser/{cat_id}', array(
+	'as' => 'all-bookscategoryuser',
+	'uses' => 'BooksUserController@indexCategory'
+    ));
 
 
 

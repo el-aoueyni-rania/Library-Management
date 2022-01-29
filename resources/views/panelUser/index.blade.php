@@ -19,7 +19,7 @@
               <h5 class="card-title"> {{ $category -> category}} </h5>
             </div>
             <div class="card-footer">
-              <button style="color: black">Consulter</button>
+              <a style="color: black" href="{{ URL::route('all-bookscategoryuser' , [ $category -> id ]) }}">Consulter</a>
             </div>
           </div>
         </div>
