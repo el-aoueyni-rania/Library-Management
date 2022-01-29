@@ -130,8 +130,12 @@ Route::group(['middleware' => ['auth']] , function() {
         'uses' => 'BooksController@BookByCategory'
     ));
 
-
-
+    // Render All Books panel admin by category
+    Route::get('/listuser', array(
+	'as' => 'listuser',
+	'uses' => 'UserController@index'
+    ));
+	
 
 
 

@@ -46,6 +46,12 @@
                     <i class="menu-icon icon-list-ul"></i> <strong> View all currently issued books   </strong> 
                 </a>
             </li>
+
+            <li>
+                <a href="{{ URL::route('listuser') }}">
+                    <i class="menu-icon fas fa-users"></i>  <strong> Users   </strong> 
+                </a>
+            </li>
         </ul>
         
         <ul class="widget widget-menu unstyled">
