@@ -68,6 +68,13 @@ class RegisterController extends Controller
     protected function store(Request $request)
     {
 
+        
+			 if($request->hasFile('photoU')){
+				$photo = $request->file('photoU');
+				$filename = time() . '.' . $photo->getClientOriginalExtension();
+				$photo->move('uploads/users/' , $filename);
+			 }
+
 
             $user = new User ; 
             $user->firstname = $request->firstname;
@@ -75,6 +82,7 @@ class RegisterController extends Controller
             $user->email = $request->email;
             $user->password = Hash::make($request['password']);
             $user->role = $request->role;
+            $user->photoU = $filename;
             $user->save();
             return redirect()->route('login' , $user)->with('storeUser' , 'Your account has been created !!!');
 

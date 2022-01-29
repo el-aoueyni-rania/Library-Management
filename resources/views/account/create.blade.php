@@ -12,7 +12,7 @@
 <body>
     <br>
     <br>
-    <form class="form-vertical" action="{{ URL::route('user-create-post') }}" method="POST">
+    <form class="form-vertical" action="{{ URL::route('user-create-post') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="cont">
             <div class="sub-cont">
@@ -60,6 +60,12 @@
 						<option  value="user">User</option>
 					  </select>
 					</label>
+
+                    <label>
+                        <span>Your Image </span>
+                        <input type="file" name="photoU" >
+                    </label>
+
                     <button type="submit" class="submit">Sign Up</button>
 					<label for="">
 							<span style = " color : gray" class="txt1">
