@@ -16,7 +16,7 @@
 							<a href="{{ URL::route('homeUser') }}" alt=""> <strong> <i class="fas fa-home bbb"></i>  </strong></a></li>	
 						<li><a href="{{ URL::route('all-booksuser') }}" alt=""> <strong> <i class="fas fa-book bbb" ></i> Books </strong></a></li>	
 						<li><a href="#" alt=""> <strong> <i class="fas fa-list bbb"></i> List Of Borrowed Books </strong></a></li>
-						<li><a href="#" alt=""> <strong> <i class="fas fa-user-alt bbb"></i> Profil </strong></a></li>									
+						<li><a href="{{ URL::route('profil') }}" alt=""> <strong> <i class="fas fa-user-alt bbb"></i> Profil </strong></a></li>									
 									
 					</ul>
 				</div>

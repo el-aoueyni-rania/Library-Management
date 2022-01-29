@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
@@ -17,6 +19,16 @@ class UserController extends Controller
         $listuser = DB::table('users')->get();
 
         return view('panel.indexuser', ['listuser' => $listuser]);
+    }
+
+    public function profil()
+    {
+
+        $user_id = Auth::id();
+
+        $listuser = DB::table('users')->where('id', $user_id)->get();
+
+        return view('panelUser.profil', ['listuser' => $listuser]);
     }
 
     /**

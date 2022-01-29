@@ -180,7 +180,11 @@ Route::group(['middleware' => ['auth']] , function() {
     ));
 
 
-
+   // Render All Books panel user by category
+   Route::get('/profil', array(
+	'as' => 'profil',
+	'uses' => 'UserController@profil'
+    ));
 
 
 

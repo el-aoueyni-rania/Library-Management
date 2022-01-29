@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ URL::route('profil') }}">
                     <i class="menu-icon icon-cog"></i> <strong>  Settings </strong> 
                 </a>
             </li>
