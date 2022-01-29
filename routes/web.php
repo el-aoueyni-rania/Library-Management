@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
 Route::get('/welcome', 'HomeController@welcome')->name('welcome');
 Route::get('/login', 'AccountController@getSignIn')->name('login');
 Route::get('/', function () {
@@ -120,6 +124,18 @@ Route::group(['middleware' => ['auth']] , function() {
 	)); 
 
 
+	// Render All Books panel admin by category
+	Route::get('/bookBycategory/{cat_id}', array(
+        'as' => 'bookBycategory',
+        'uses' => 'BooksController@BookByCategory'
+    ));
+
+
+
+
+
+
+
 	// Home Page of Control Panel User
 	Route::get('/homeUser',array(
 		'as' 	=> 'homeUser',
@@ -147,31 +163,42 @@ Route::group(['middleware' => ['auth']] , function() {
 
 
 
-    // Render All Books panel user
+    // Render All Books panel user by category
     Route::get('/all-bookscategoryuser/{cat_id}', array(
 	'as' => 'all-bookscategoryuser',
 	'uses' => 'BooksUserController@indexCategory'
     ));
 
-
-
-
-
-
-
-
-
-	
-	Route::post('/bookcategory', 'BooksController@BookCategoryStore')->name('bookcategory.store');
-	
-
-
-	
-	Route::get('/bookBycategory/{cat_id}', array(
-        'as' => 'bookBycategory',
-        'uses' => 'BooksController@BookByCategory'
+   // Render All Books panel user by category
+   Route::get('/search_book', array(
+	'as' => 'search_book',
+	'uses' => 'BooksUserController@search'
     ));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 	// Students
     Route::get('/registered-students', array(
         'as' => 'registered-students',
@@ -218,6 +245,29 @@ Route::group(['middleware' => ['auth']] , function() {
 
     // Main Logs Controlller resource
     Route::resource('/issue-log', 'LogController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	// Sign out (GET) 
     Route::get('/sign-out', array(

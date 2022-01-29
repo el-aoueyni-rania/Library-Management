@@ -17,8 +17,13 @@
           </form>
         </div> 
     </div> 
+    @if (request()->input())
+            <h6 style="margin-bottom: 20px ; text-align : center ; color : blue;">{{ $books->count() }} résultat(s) pour la recherche "{{ request()->q }}"</h6>
+        @endif
     <div class="row row-cols-1 row-cols-md-4 g-4">
-        @foreach ($book_list as $key => $book)
+         
+        
+        @foreach ($books as $key => $book)
         <div class="col">
           <div class="card h-100">
             <img style="height : 150px "  src="{{ asset('uploads/books/'. $book -> photo ) }}" class="card-img-top" alt="Skyscrapers"/>

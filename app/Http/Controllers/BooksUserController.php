@@ -94,20 +94,6 @@ class BooksUserController extends Controller
 			
 
 
-	public function BookCategoryStore(Request $request)
-	{
-		$bookcategory = BookCategories::create($request->all());
-		
-		if (!$bookcategory) {
-
-			return 'Book Category fail to save!';
-		}else {
-
-			return "Book Category Added successfully to Database";
-		}
-	}
-
-
 	/**
 	 * Display the specified resource.
 	 *
@@ -116,27 +102,7 @@ class BooksUserController extends Controller
 	 */
 	public function show($string)
 	{
-		$book_list = Books::select('book_id','title','author','description','book_categories.category')
-		->join('book_categories', 'book_categories.id', '=', 'books.category_id')
-			->where('title', 'like', '%' . $string . '%')
-			->orWhere('author', 'like', '%' . $string . '%')
-			->orderBy('book_id');
-
-		$book_list = $book_list->get();
-
-		foreach($book_list as $book){
-			$conditions = array(
-				'book_id'			=> $book->book_id,
-				'available_status'	=> 1
-			);
-
-			$count = Issue::where($conditions)
-				->count();
-
-			$book->avaliability = ($count > 0) ? true : false;
-		}
-
-        return $book_list;
+		
 	}
 
 
@@ -148,61 +114,7 @@ class BooksUserController extends Controller
 	 */
 	public function edit($id)
 	{
-		$issue = Issue::find($id);
-		if($issue == NULL){
-			return 'Invalid Book ID';
-		}
-
-		$book = Books::find($issue->book_id);
-
-		$issue->book_name = $book->title;
-		$issue->author = $book->author;
-
-		$issue->category = Categories::find($book->category_id)
-			->category;
-
-		$issue->available_status = (bool)$issue->available_status;
-		if($issue->available_status == 1){
-			return $issue;
-		}
-
-		$conditions = array(
-			'return_time'	=> 0,
-			'book_issue_id'	=> $id,
-		);
-		$book_issue_log = Logs::where($conditions)
-			->take(1)
-			->get();
-
-		foreach($book_issue_log as $log){
-			$student_id = $log->student_id;
-		}
-
-		$student_data = Student::find($student_id);
-
-		unset($student_data->email_id);
-		unset($student_data->books_issued);
-		unset($student_data->approved);
-		unset($student_data->rejected);
-
-		$student_branch = Branch::find($student_data->branch)
-			->branch;
-		$roll_num = $student_data->roll_num . '/' . $student_branch . '/' . substr($student_data->year, 2, 4);
-
-		unset($student_data->roll_num);
-		unset($student_data->branch);
-		unset($student_data->year);
-
-		$student_data->roll_num = $roll_num;
-
-		$student_data->category = StudentCategories::find($student_data->category)
-			->category;
-		$issue->student = $student_data;
-
-
-        return $issue;
 	}
-
 	/**
 	 * Update the specified resource in storage.
 	 *
@@ -234,38 +146,12 @@ class BooksUserController extends Controller
     }
 
 	
-	public function BookByCategory($cat_id)
-	{
-		$book_list = Books::select('book_id','title','author','description','book_categories.category')
-		->join('book_categories', 'book_categories.id', '=', 'books.category_id')
-			->where('category_id', $cat_id)->orderBy('book_id');
+	public function search()
+    {
+        $q = request()->input('q');
 
-			$book_list = $book_list->get();
-
-			for($i=0; $i<count($book_list); $i++){
-
-				$id = $book_list[$i]['book_id'];
-				$conditions = array(
-					'book_id'			=> $id,
-					'available_status'	=> 1
-				);
-	
-				$book_list[$i]['total_books'] = Issue::select()
-					->where('book_id','=',$id)
-					->count();
-	
-				$book_list[$i]['avaliable'] = Issue::select()
-					->where($conditions)
-					->count();
-			}
-	
-			return $book_list;
-	}
-
-    public function searchBook(){
-    	$db_control = new HomeController();
-
-		return view('public.book-search')
-			->with('categories_list', $db_control->categories_list);
+        $books = Books::where('title' , 'like' , "%$q%")
+              ->orwhere('author' , 'like' , "%$q%")->get();
+              return view('panelUser.search')->with('books' , $books);
     }
 }

@@ -107,21 +107,6 @@ class BooksController extends Controller
 
 		}
 
-
-	public function BookCategoryStore(Request $request)
-	{
-		$bookcategory = BookCategories::create($request->all());
-		
-		if (!$bookcategory) {
-
-			return 'Book Category fail to save!';
-		}else {
-
-			return "Book Category Added successfully to Database";
-		}
-	}
-
-
 	/**
 	 * Display the specified resource.
 	 *
@@ -283,10 +268,4 @@ class BooksController extends Controller
 			return $book_list;
 	}
 
-    public function searchBook(){
-    	$db_control = new HomeController();
-
-		return view('public.book-search')
-			->with('categories_list', $db_control->categories_list);
-    }
 }

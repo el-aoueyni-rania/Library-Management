@@ -13,12 +13,6 @@
                     <i class="menu-icon icon-th-list"></i><strong> All Books in Library </strong> 
                 </a>
             </li>
-
-            <li>
-                <a href="#">
-                    <i class="menu-icon fas fa-search"></i><strong> Find Book </strong> 
-                </a>
-            </li>
            
             <li>
                 <a href="{{ URL::route('add-bookuser') }}">
