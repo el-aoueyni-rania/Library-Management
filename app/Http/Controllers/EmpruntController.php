@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EmpruntController extends Controller
 {
@@ -13,7 +14,9 @@ class EmpruntController extends Controller
      */
     public function index()
     {
-        //
+        $listemprunt = DB::table('emprunts')->get();
+
+        return view('panel.indexemprunt', ['listemprunt' => $listemprunt]);
     }
 
     /**

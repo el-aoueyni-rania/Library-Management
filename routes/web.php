@@ -84,6 +84,27 @@ Route::resource('/books', 'BooksController');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Authenticated group 
 // Route::group(array('before' => 'auth'), function() {
 Route::group(['middleware' => ['auth']] , function() {
@@ -136,6 +157,24 @@ Route::group(['middleware' => ['auth']] , function() {
 	'uses' => 'UserController@index'
     ));
 	
+    // Render All Books panel admin by category
+    Route::get('/listemprunt', array(
+	'as' => 'listemprunt',
+	'uses' => 'EmpruntController@index'
+    ));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
