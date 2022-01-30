@@ -47,9 +47,9 @@
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Number of issues</label>
+                    <label class="control-label">Total</label>
                     <div class="controls">
-                        <input type="number" id="number" data-form-field="number" placeholder="How many issues are there?" class="span8">
+                        <input type="number" name="total"  placeholder="How many books are there?" class="span8" required>
                     </div>
                 </div>
                 

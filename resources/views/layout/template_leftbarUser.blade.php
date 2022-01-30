@@ -12,12 +12,6 @@
                     <i class="menu-icon icon-th-list"></i><strong> All Books in Library </strong> 
                 </a>
             </li>
-           
-            <li>
-                <a href="{{ URL::route('add-bookuser') }}">
-                    <i class="menu-icon fas fa-plus"></i><strong> Add Book </strong> 
-                </a>
-            </li>
             
             <li>
                 <a href="{{ URL::route('listempruntuser') }}">

@@ -27,7 +27,7 @@
               </p>
             </div>
             <div class="card-footer">
-              <button style="color: black">Emprunter</button>
+              <a style="color: black" href="{{ URL::route('empruntbook', [ $book -> book_id ] ) }}">Emprunter</a>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ class CreateBooksTable extends Migration
             $table->string('photo');
             $table->integer('category_id')->unsigned();
             $table->integer('added_by')->unsigned();
-
+            $table->integer('total');
             $table->timestamps();
         });
     }

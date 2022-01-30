@@ -19,7 +19,6 @@
                         <th>Book Title</th>
                         <th>Author</th>
                         <th>Description</th>
-                        <th>Available</th>
                         <th>Total</th>
                     </tr>
                 </thead>
@@ -30,6 +29,7 @@
                         <td> {{ $book -> title }} </td>
                         <td> {{ $book -> author }} </td>
                         <td> {{ $book -> description }} </td>
+                        <td> {{ $book -> total }} </td>
 
                     </tr>
                     @endforeach
