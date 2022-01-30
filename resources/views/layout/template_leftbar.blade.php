@@ -16,13 +16,13 @@
                 </a>
             </li>
             <li>
-                <a href="{{ URL::route('all-books') }}">
+                <a href="{{ URL::route('all-categories') }}">
                     <i class="menu-icon icon-th-list"></i> <strong> All Books in Library </strong> 
                 </a>
             </li>
             <li>
                 <a href="{{ URL::route('add-book-category') }}">
-                    <i class="menu-icon icon-folder-open-alt"></i> <strong> Add Book Category </strong> 
+                    <i class="menu-icon icon-folder-open-alt"></i> <strong> Add Category </strong> 
                 </a>
             </li>
             <li>

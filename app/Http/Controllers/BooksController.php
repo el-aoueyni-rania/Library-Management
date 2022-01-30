@@ -60,6 +60,15 @@ class BooksController extends Controller
         return $book_list;
 	}
 
+	public function indexCategory($id)
+	{
+		$category = DB::table('book_categories')->where('id', $id)->get();
+
+		$book_list = DB::table('books')->where('category_id', $id)->get();
+        return view('panel.allbook', ['book_list' => $book_list , 'category' => $category]);
+
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.

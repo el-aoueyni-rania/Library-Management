@@ -22,6 +22,19 @@ class CategoryController extends Controller
         return view('panel.addbookcategory', ['category_list' => $category_list]);
     }
 
+    public function homeUser(){	
+        $category_list = DB::table('book_categories')->get();
+		return view('panelUser.index', ['category_list' => $category_list]);
+		//return view('panelUser.index');
+	}
+
+    
+    public function allcategories(){	
+
+        $category_list = DB::table('book_categories')->get();
+		return view('panel.categorybook', ['category_list' => $category_list]);
+		//return view('panelUser.index');
+	}
     /**
      * Show the form for creating a new resource.
      *

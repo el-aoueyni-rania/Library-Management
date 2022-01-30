@@ -18,7 +18,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="all-books">
+                <tbody >
                     @foreach ($listuser as $key => $user)
                     <tr class="text-center">
                         <td> {{ $user -> id }} </td>

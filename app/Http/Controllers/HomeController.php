@@ -4,8 +4,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\BookCategories;
 use App\Models\StudentCategories;
 
 use App\Models\Branch;
@@ -32,11 +30,7 @@ class HomeController extends Controller
             ->with('branch_list', $this->branch_list)
             ->with('student_categories_list', $this->student_categories_list);
 	}
-    public function homeUser(){	
-        $category_list = DB::table('book_categories')->get();
-		return view('panelUser.index', ['category_list' => $category_list]);
-		//return view('panelUser.index');
-	}
+   
     public function welcome()
     {
         return view('welcome');

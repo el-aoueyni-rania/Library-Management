@@ -115,6 +115,19 @@ Route::group(['middleware' => ['auth']] , function() {
 		'uses'	=> 'HomeController@home'
 	));
 	
+	// Render All categories panel admin
+	Route::get('/all-categories',array(
+		'as' 	=> 'all-categories',
+		'uses'	=> 'CategoryController@allcategories'
+	));	
+
+	// Render All Books panel admin by category
+    Route::get('/all-bookscategoryadmin/{cat_id}', array(
+		'as' => 'all-bookscategoryadmin',
+		'uses' => 'BooksController@indexCategory'
+		));
+
+
 	// Render All Books panel admin
     Route::get('/all-books', array(
         'as' => 'all-books',
@@ -182,7 +195,7 @@ Route::group(['middleware' => ['auth']] , function() {
 	// Home Page of Control Panel User
 	Route::get('/homeUser',array(
 		'as' 	=> 'homeUser',
-		'uses'	=> 'HomeController@homeUser'
+		'uses'	=> 'CategoryController@homeUser'
 	));	
 
 
@@ -212,14 +225,14 @@ Route::group(['middleware' => ['auth']] , function() {
 	'uses' => 'BooksUserController@indexCategory'
     ));
 
-   // Render All Books panel user by category
+   // Render search book
    Route::get('/search_book', array(
 	'as' => 'search_book',
 	'uses' => 'BooksUserController@search'
     ));
 
 
-   // Render All Books panel user by category
+   // Render profil user
    Route::get('/profil', array(
 	'as' => 'profil',
 	'uses' => 'UserController@profil'
