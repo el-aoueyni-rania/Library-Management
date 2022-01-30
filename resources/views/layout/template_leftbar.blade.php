@@ -52,6 +52,11 @@
                 </a>
             </li>
             <li>
+                <a href="{{ URL::route('listempruntconfirmer') }}">
+                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> List Emprunts Confirmer  </strong> 
+                </a>
+            </li>
+            <li>
                 <a href="{{ URL::route('listuser') }}">
                     <i class="menu-icon fas fa-users"></i>  <strong> Users   </strong> 
                 </a>

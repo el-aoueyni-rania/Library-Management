@@ -177,7 +177,11 @@ Route::group(['middleware' => ['auth']] , function() {
     ));
 
 
-
+   // Render All emprunts confirmer panel admin 
+   Route::get('/listempruntconfirmer', array(
+	'as' => 'listempruntconfirmer',
+	'uses' => 'EmpruntConfirmerController@index'
+    ));
 
 
 

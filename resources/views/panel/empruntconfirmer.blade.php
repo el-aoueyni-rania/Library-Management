@@ -3,7 +3,7 @@
 <div class="content">
     <div class="module">
         <div class="module-head">
-            <h3>List Of Emprunts </h3>
+            <h3>List Of Emprunts Confirmer</h3>
         </div>
         <div class="module-body">
 
@@ -21,21 +21,24 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="all-books">
-                    @foreach ($listemprunt as $key => $emprunt)
+                <tbody >
+                    @foreach ($empruntconfirmer_list as $key => $emprunt)
                     <tr class="text-center">
                         <td> {{ $emprunt -> id }} </td>
-                        <td> {{ $emprunt -> user_id }} </td>
-                        <td> {{ $emprunt -> firstnameU}} </td>
-                        <td> {{ $emprunt -> lastnameU }} </td>
-                        <td> {{ $emprunt -> emailU }} </td>
-                        <td> {{ $emprunt -> titleB }} </td>
-                        <td> {{ $emprunt -> Date_Emprunt }} </td>
-                        <td> {{ $emprunt -> Date_retour }} </td>
+                        <td> {{ $emprunt -> user_idC }} </td>
+                        <td> {{ $emprunt -> firstnameUC}} </td>
+                        <td> {{ $emprunt -> lastnameUC }} </td>
+                        <td> {{ $emprunt -> emailUC }} </td>
+                        <td> {{ $emprunt -> titleBC }} </td>
+                        <td> {{ $emprunt -> Date_EmpruntC }} </td>
+                        <td> {{ $emprunt -> Date_retourC }} </td>
                         <td>
                         <a href="#"
-                            title=" confirmer emprunt {{ $emprunt->id }} ">
-                            <i class="fas fa-check-circle"></i> Confirmer</a>
+                            title=" ajout list retard : {{ $emprunt->id }} ">
+                            <i class="fas fa-plus-circle"></i></a>
+                        <a href="#"
+                            title=" delete emprunt : {{ $emprunt->id }} ">
+                            <i class="fas fa-trash-alt"></i></a>
                         </td>
 
                     </tr>
