@@ -41,3 +41,12 @@
 				</div>
 			</div>
 @endif
+
+@if(Session::has('storeEmprunt'))
+			<div style="color: green" class="row">
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					{{ Session::get('storeEmprunt') }}
+				</div>
+			</div>
+@endif

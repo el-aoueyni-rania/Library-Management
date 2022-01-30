@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Emprunt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -32,6 +33,17 @@ class EmpruntController extends Controller
     }
 
 
+    public function empruntbook($id)
+	{
+        
+		$book = DB::table('books')->where('book_id', $id)->get();
+		
+        return view('panelUser.empruntbook', ['book' => $book ]);
+
+	}
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -50,7 +62,22 @@ class EmpruntController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = Auth::id();
+
+
+        $emprunt = new Emprunt() ; 
+        $emprunt->user_id = $user_id;
+        $emprunt->firstnameU = $request->firstnameU;
+        $emprunt->lastnameU = $request->lastnameU;
+        $emprunt->emailU = $request->emailU;
+        $emprunt->titleB = $request->titleB;
+        $emprunt->Date_Emprunt = $request->Date_Emprunt;
+        $emprunt->Date_retour = $request->Date_retour;
+
+        $emprunt->save();
+        return redirect()->route('listempruntuser' , $emprunt)->with('storeEmprunt' , 'Emprunt Book has been created successfully !!!');
+
+
     }
 
     /**

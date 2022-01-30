@@ -226,17 +226,25 @@ Route::group(['middleware' => ['auth']] , function() {
     ));
 
 
- // Render All emprunts panel user 
- Route::get('/listempruntuser', array(
+  // Render All emprunts panel user 
+  Route::get('/listempruntuser', array(
 	'as' => 'listempruntuser',
 	'uses' => 'EmpruntController@indexempruntuser'
     ));
 
 
+  // Render emprunt form panel user
+   Route::get('/empruntbook/{book_id}', array(
+	'as' => 'empruntbook',
+	'uses' => 'EmpruntController@empruntbook'
+    ));
 
 
-
-
+  // Render emprunter book panel user 
+   Route::post('/bookempruntform', array(
+	'as' => 'bookempruntform',
+	'uses' => 'EmpruntController@store'
+    ));
 
 
 

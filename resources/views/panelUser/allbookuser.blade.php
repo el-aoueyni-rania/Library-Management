@@ -17,7 +17,7 @@
           </form>
         </div> 
     </div> 
-    <div class="row row-cols-1 row-cols-md-4 g-4">
+     <div class="row row-cols-1 row-cols-md-4 g-4">
         @foreach ($book_list as $key => $book)
         <div class="col">
           <div class="card h-100">
@@ -31,11 +31,11 @@
               </p>
             </div>
             <div class="card-footer">
-              <button style="color: black">Emprunter</button>
-            </div>
+              <a style="color: black" href="{{ URL::route('empruntbook', [ $book -> book_id ] ) }}">Emprunter</a>
+            </div>  
           </div>
-        </div>
+        </div> 
         @endforeach
-    </div>
-</div>      
+     </div> 
+</div>     
 @stop
