@@ -27,7 +27,12 @@
               </p>
             </div>
             <div class="card-footer">
+              @if ( $book -> total == 0)
+              <b style="color: red"> Currently unavailable </b>
+              @else
               <a style="color: black" href="{{ URL::route('empruntbook', [ $book -> book_id ] ) }}">Emprunter</a>
+              @endif
+                  
             </div>
           </div>
         </div>
