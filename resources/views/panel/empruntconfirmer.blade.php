@@ -33,7 +33,7 @@
                         <td> {{ $emprunt -> Date_EmpruntC }} </td>
                         <td> {{ $emprunt -> Date_retourC }} </td>
                         <td>
-                        <a href="#"
+                        <a href="{{ URL::route('ajoutretard',[ $emprunt->id ]) }}"
                             title=" ajout list retard : {{ $emprunt->id }} ">
                             <i class="fas fa-plus-circle"></i></a>
                         <a href="#"

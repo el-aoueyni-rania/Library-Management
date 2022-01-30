@@ -177,23 +177,31 @@ Route::group(['middleware' => ['auth']] , function() {
     ));
 
 
-   // Render All emprunts confirmer panel admin 
-   Route::get('/listempruntconfirmer', array(
-	'as' => 'listempruntconfirmer',
-	'uses' => 'EmpruntConfirmerController@index'
-    ));
-
-  // Render add emprunts confirmer panel admin 
+   
+  // Render confirmer panel admin 
   Route::any('/addempruntconfirmer/{emp_id}', array(
 	'as' => 'addempruntconfirmer',
 	'uses' => 'EmpruntConfirmerController@store'
     ));
+
+	// Render list emprunts confirmer panel admin 
+	Route::get('/listempruntconfirmer', array(
+		'as' => 'listempruntconfirmer',
+		'uses' => 'EmpruntConfirmerController@index'
+		));
+	
 
   // Render delete emprunts confirmer panel admin 
   Route::any('/deleteempruntconfirmer/{empc_id}', array(
 	'as' => 'deleteempruntconfirmer',
 	'uses' => 'EmpruntConfirmerController@destroy'
     ));
+
+	// Render add emprunts retard panel admin 
+	Route::any('/ajoutretard/{ret_id}', array(
+		'as' => 'ajoutretard',
+		'uses' => 'BookRetardController@store'
+		));
 
   // Render All book en retard panel admin 
   Route::get('/listeretard', array(

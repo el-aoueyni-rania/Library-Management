@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\BookRetard;
+
 
 class BookRetardController extends Controller
 {
@@ -35,9 +37,27 @@ class BookRetardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id)
     {
-        //
+        $empruntC = DB::table('emprunt_confirmers')->where('id', $id)->first();
+
+
+        $retard = new BookRetard() ; 
+        $retard->user_idR = $empruntC->user_idC;
+        $retard->firstnameR = $empruntC->firstnameUC;
+        $retard->lastnameR = $empruntC->lastnameUC;
+        $retard->emailR = $empruntC->emailUC;
+        $retard->titleR = $empruntC->titleBC;
+        $retard->Date_EmpruntR = $empruntC->Date_EmpruntC;
+        $retard->Date_retourR = $empruntC->Date_retourC;
+
+        $retard->save();
+
+        DB::table('emprunt_confirmers')->where('id', $id)->delete();
+
+
+        
+        return redirect()->route('listeretard', $retard)->with('storeempruntretard' , 'Add Emprunt retard  successfully !!!');
     }
 
     /**
