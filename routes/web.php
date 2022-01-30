@@ -195,9 +195,19 @@ Route::group(['middleware' => ['auth']] , function() {
 	'uses' => 'EmpruntConfirmerController@destroy'
     ));
 
+  // Render All book en retard panel admin 
+  Route::get('/listeretard', array(
+	'as' => 'listeretard',
+	'uses' => 'BookRetardController@index'
+    ));
 
 
-
+	// Render delete emprunts retard panel admin 
+	Route::any('/deleteempruntretard/{empr_id}', array(
+		'as' => 'deleteempruntretard',
+		'uses' => 'BookRetardController@destroy'
+		));
+	
 
 
 

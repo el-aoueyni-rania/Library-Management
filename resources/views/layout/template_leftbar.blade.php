@@ -56,6 +56,13 @@
                     <i class=" menu-icon fas fa-book-reader"></i>  <strong> List Emprunts Confirmer  </strong> 
                 </a>
             </li>
+
+            <li>
+                <a href="{{ URL::route('listeretard') }}">
+                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> List Retard Book  </strong> 
+                </a>
+            </li>
+
             <li>
                 <a href="{{ URL::route('listuser') }}">
                     <i class="menu-icon fas fa-users"></i>  <strong> Users   </strong> 
