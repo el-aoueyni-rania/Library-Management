@@ -34,8 +34,12 @@
                         <td> {{ $emprunt -> Date_retour }} </td>
                         <td>
                         <a href="#"
-                            title=" confirmer emprunt {{ $emprunt->id }} ">
+                            title=" confirmer emprunt {{ $emprunt->id }} "
+                            onclick="event.preventDefault(); document.querySelector('#delete-emprunt-form').submit()">
                             <i class="fas fa-check-circle"></i> Confirmer</a>
+                            <form
+                                action="{{ route('addempruntconfirmer',[ $emprunt->id ]) }}"
+                                method="post" id="delete-emprunt-form"> @csrf @method('DELETE')</form>
                         </td>
 
                     </tr>

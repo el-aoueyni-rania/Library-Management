@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\EmpruntConfirmer;
+use App\EmpruntConfirmer;
 
 
 class EmpruntConfirmerController extends Controller
@@ -37,9 +37,29 @@ class EmpruntConfirmerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id)
     {
-        //
+        $emprunt = DB::table('emprunts')->where('id', $id)->first();
+
+        $title = $emprunt->titleB;
+
+        $emprunttt = new EmpruntConfirmer() ; 
+        $emprunttt->user_idC = $emprunt->user_id;
+        $emprunttt->firstnameUC = $emprunt->firstnameU;
+        $emprunttt->lastnameUC = $emprunt->lastnameU;
+        $emprunttt->emailUC = $emprunt->emailU;
+        $emprunttt->titleBC = $emprunt->titleB;
+        $emprunttt->Date_EmpruntC = $emprunt->Date_Emprunt;
+        $emprunttt->Date_retourC = $emprunt->Date_retour;
+
+        $emprunttt->save();
+
+        DB::table('emprunts')->where('id', $id)->delete();
+
+        DB::table('books')->where('title', $title)->decrement('total');
+
+        
+        return redirect()->route('listempruntconfirmer', $emprunttt)->with('storeempruntconfirmer' , 'Emprunt confirmer successfully !!!');
     }
 
     /**

@@ -183,7 +183,11 @@ Route::group(['middleware' => ['auth']] , function() {
 	'uses' => 'EmpruntConfirmerController@index'
     ));
 
-
+  // Render add emprunts confirmer panel admin 
+  Route::any('/addempruntconfirmer/{emp_id}', array(
+	'as' => 'addempruntconfirmer',
+	'uses' => 'EmpruntConfirmerController@store'
+    ));
 
 
 
