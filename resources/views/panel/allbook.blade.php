@@ -20,6 +20,7 @@
                         <th>Author</th>
                         <th>Description</th>
                         <th>Total</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,14 @@
                         <td> {{ $book -> author }} </td>
                         <td> {{ $book -> description }} </td>
                         <td> {{ $book -> total }} </td>
+                        <td>
+                            <a href="#"
+                                title=" edit book : {{ $book->book_id }} ">
+                                <i class="fas fa-edit"></i></a>
+                            <a href="#"
+                                title=" delete book : {{ $book->book_id }} ">
+                                <i class="fas fa-trash-alt"></i></a>
+                        </td>
 
                     </tr>
                     @endforeach
