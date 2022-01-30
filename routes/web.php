@@ -157,7 +157,7 @@ Route::group(['middleware' => ['auth']] , function() {
 	'uses' => 'UserController@index'
     ));
 	
-    // Render All Books panel admin by category
+    // Render All emprunts panel admin 
     Route::get('/listemprunt', array(
 	'as' => 'listemprunt',
 	'uses' => 'EmpruntController@index'
@@ -226,8 +226,11 @@ Route::group(['middleware' => ['auth']] , function() {
     ));
 
 
-
-
+ // Render All emprunts panel user 
+ Route::get('/listempruntuser', array(
+	'as' => 'listempruntuser',
+	'uses' => 'EmpruntController@indexempruntuser'
+    ));
 
 
 

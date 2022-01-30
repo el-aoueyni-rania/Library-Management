@@ -1,6 +1,5 @@
 <div class="span3" >
     <div class="sidebar" >
-        <br><br><br><br><br>
         <ul class="widget widget-menu unstyled">
             <li>
                 <a href="{{ URL::route('homeUser') }}">
@@ -21,8 +20,8 @@
             </li>
             
             <li>
-                <a href="#">
-                    <i class="menu-icon icon-list-ul"></i> <strong>  List Of Borrowed Books  </strong> 
+                <a href="{{ URL::route('listempruntuser') }}">
+                    <i class=" menu-icon fas fa-book-reader"></i> <strong>  List Of Borrowed Books  </strong> 
                 </a>
             </li>
             <li>
