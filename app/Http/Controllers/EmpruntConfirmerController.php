@@ -104,6 +104,9 @@ class EmpruntConfirmerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('emprunt_confirmers')->where('id', $id)->delete();
+
+        return redirect()->route('listempruntconfirmer')->with('deleteempruntconfirmer' , 'Emprunt confirmer has been deleted successfully !!!');
+
     }
 }

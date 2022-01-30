@@ -189,6 +189,11 @@ Route::group(['middleware' => ['auth']] , function() {
 	'uses' => 'EmpruntConfirmerController@store'
     ));
 
+  // Render delete emprunts confirmer panel admin 
+  Route::any('/deleteempruntconfirmer/{empc_id}', array(
+	'as' => 'deleteempruntconfirmer',
+	'uses' => 'EmpruntConfirmerController@destroy'
+    ));
 
 
 

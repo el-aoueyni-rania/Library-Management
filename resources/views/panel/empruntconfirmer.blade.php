@@ -37,8 +37,12 @@
                             title=" ajout list retard : {{ $emprunt->id }} ">
                             <i class="fas fa-plus-circle"></i></a>
                         <a href="#"
-                            title=" delete emprunt : {{ $emprunt->id }} ">
+                            title=" delete emprunt : {{ $emprunt->id }} "
+                            onclick="event.preventDefault(); document.querySelector('#delete-empruntc-form').submit()">
                             <i class="fas fa-trash-alt"></i></a>
+                            <form
+                                action="{{ route('deleteempruntconfirmer',[ $emprunt->id ]) }}"
+                                method="post" id="delete-empruntc-form"> @csrf @method('DELETE')</form>
                         </td>
 
                     </tr>

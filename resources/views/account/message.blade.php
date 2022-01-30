@@ -60,3 +60,13 @@
 				</div>
 			</div>
 @endif
+
+
+@if(Session::has('deleteempruntconfirmer'))
+			<div style="color: red" class="row">
+				<div class="alert alert-danger">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					{{ Session::get('deleteempruntconfirmer') }}
+				</div>
+			</div>
+@endif
