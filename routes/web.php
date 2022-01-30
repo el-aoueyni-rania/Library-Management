@@ -44,12 +44,7 @@ Route::group(array('before' => 'guest'), function() {
 			'uses' => 'AccountController@postSignIn'
 		));
 
-		// Sign in (POST) 
-		Route::post('/student-registration', array(
-			'as' => 'student-registration-post',
-			'uses' => 'StudentController@postRegistration'
-		));		
-
+		
 	});
 
 
@@ -60,12 +55,7 @@ Route::group(array('before' => 'guest'), function() {
 		'uses' 	=> 'AccountController@getCreate'
 	));
 
-	// Student Registeration form 
-	Route::get('/student-registration', array(
-		'as' 	=> 'student-registration',
-		'uses' 	=> 'StudentController@getRegistration'
-	));
-    
+	
     // Render search books panel
     Route::get('/book', array(
         'as' => 'search-book',
@@ -76,30 +66,6 @@ Route::group(array('before' => 'guest'), function() {
 
 // Main books Controlller left public so that it could be used without logging in too
 Route::resource('/books', 'BooksController');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -289,72 +255,6 @@ Route::group(['middleware' => ['auth']] , function() {
 	'as' => 'bookempruntform',
 	'uses' => 'EmpruntController@store'
     ));
-
-
-
-
-
-
-
-
-
-
-
-	
-	// Students
-    Route::get('/registered-students', array(
-        'as' => 'registered-students',
-        'uses' => 'StudentController@renderStudents'
-    ));
-
-    // Render students approval panel
-    Route::get('/students-for-approval', array(
-        'as' => 'students-for-approval',
-        'uses' => 'StudentController@renderApprovalStudents'
-	));
-	
-	  // Render students approval panel
-	  Route::get('/settings', array(
-        'as' => 'settings',
-        'uses' => 'StudentController@Setting'
-	));
-	
-	  // Render students approval panel
-	  Route::post('/setting', array(
-        'as' => 'settings.store',
-        'uses' => 'StudentController@StoreSetting'
-    ));
-
-    // Main students Controlller resource
-	Route::resource('/student', 'StudentController');
-	
-	Route::post('/studentByattribute', array(
-        'as' => 'studentByattribute',
-        'uses' => 'StudentController@StudentByAttribute'
-    ));
-
-    // Issue Logs
-    Route::get('/issue-return', array(
-        'as' => 'issue-return',
-        'uses' => 'LogController@renderIssueReturn'
-    ));
-
-    // Render logs panel
-    Route::get('/currently-issued', array(
-        'as' => 'currently-issued',
-        'uses' => 'LogController@renderLogs'
-    ));
-
-    // Main Logs Controlller resource
-    Route::resource('/issue-log', 'LogController');
-
-
-
-
-
-
-
-
 
 
 

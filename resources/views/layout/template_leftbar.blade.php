@@ -6,16 +6,6 @@
                 </a>
             </li>
             <li>
-                <a href="{{ URL::route('students-for-approval') }}">
-                    <i class="menu-icon icon-filter"></i>  <strong> All Waiting Students </strong>  
-                </a>
-            </li>
-            <li>
-                <a href="{{ URL::route('registered-students') }}">
-                    <i class="menu-icon icon-group"></i> <strong> All approved Students</strong>  
-                </a>
-            </li>
-            <li>
                 <a href="{{ URL::route('all-categories') }}">
                     <i class="menu-icon icon-th-list"></i> <strong> All Books in Library </strong> 
                 </a>
@@ -31,35 +21,19 @@
                 </a>
             </li>
             <li>
-                <a href="{{ URL::route('settings') }}">
-                    <i class="menu-icon icon-cog"></i> <strong> Add Settings </strong> 
-                </a>
-            </li>
-
-            <li>
-                <a href="{{ URL::route('issue-return') }}">
-                    <i class="menu-icon icon-signout"></i> <strong> Issue / Return Books </strong> 
-                </a>
-            </li>
-            <li>
-                <a href="{{ URL::route('currently-issued') }}">
-                    <i class="menu-icon icon-list-ul"></i> <strong> View all currently issued books   </strong> 
-                </a>
-            </li>
-            <li>
                 <a href="{{ URL::route('listemprunt') }}">
-                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> List Emprunts   </strong> 
+                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> All Waiting Students   </strong> 
                 </a>
             </li>
             <li>
                 <a href="{{ URL::route('listempruntconfirmer') }}">
-                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> List Emprunts Confirmer  </strong> 
+                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> All approved Students  </strong> 
                 </a>
             </li>
 
             <li>
                 <a href="{{ URL::route('listeretard') }}">
-                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> List Retard Book  </strong> 
+                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> View all currently issued books   </strong> 
                 </a>
             </li>
 
