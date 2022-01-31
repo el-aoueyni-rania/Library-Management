@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Mail\TestMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
+
 
 class MailController extends Controller
 {
@@ -13,14 +15,20 @@ class MailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function sendMail()
+    public function sendMail($id)
+
     {
+        $book = DB::table('book_retards')->where('id', $id)->first();
+
+        $mail = $book->emailR;
         $details=[
-            'title' => 'testiiiiiiiiiiiiiiiiiiiiing' ,
-            'body' => 'zaama tekhdeeeeem'
+            'title' => 'rakkk retaaaaard ' ,
+            'body' => 'rajaaa3 lkteeeb ya ham '
         ];
-        Mail::to('raniaaouini29@gmail.com')->send(new TestMail($details));
-        return 'email sent';
+        Mail::to($mail)->send(new TestMail($details));
+        return redirect()->route('listeretard')->with('sentmail' , 'mail sent successfully to User !!!');
+
+        
     }
 
     /**

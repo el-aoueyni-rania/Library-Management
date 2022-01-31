@@ -27,6 +27,17 @@
               </p>
             </div>
             <div class="card-footer">
+              <object data="data/test.pdf" type="application/pdf" width="300" height="200">
+                <a href="{{ asset('uploads/files/'. $book -> fichierpdf ) }}">View PDF Version</a>
+                </object>
+            </div> 
+
+
+            <div class="card-footer">
+              <a style="color: black" href="{{ URL::route('downloadbook', [ $book -> book_id ] ) }}">Download</a>
+            </div> 
+
+            <div class="card-footer">
               @if ( $book -> total == 0)
               <b style="color: red"> Currently unavailable </b>
               @else

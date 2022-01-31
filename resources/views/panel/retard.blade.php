@@ -33,7 +33,7 @@
                         <td> {{ $emprunt -> Date_EmpruntR }} </td>
                         <td> {{ $emprunt -> Date_retourR }} </td>
                         <td>
-                        <a href="{{ route('sendmail') }}">
+                        <a href="{{ route('sendmail',[ $emprunt->id ]) }}">
                             <i class="far fa-envelope"></i></a>
                         <a href="#"
                             title=" delete emprunt : {{ $emprunt->id }} "
