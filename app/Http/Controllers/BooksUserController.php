@@ -99,9 +99,9 @@ class BooksUserController extends Controller
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($string)
+	public function show($id)
 	{
-		
+
 	}
 
 
@@ -153,4 +153,14 @@ class BooksUserController extends Controller
               ->orwhere('author' , 'like' , "%$q%")->get();
               return view('panelUser.search')->with('books' , $books);
     }
+
+
+	public function download($id)
+	{
+		$book = DB::table('books')->where('book_id', $id)->first();
+
+		$file = $book->fichierpdf;
+
+        return response()->download(public_path('uploads/files/'.$file)) ;
+	}
 }

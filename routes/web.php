@@ -315,7 +315,11 @@ Route::group(['middleware' => ['auth']] , function() {
     ));
 
 
-
+  // Render view pdf file panel user 
+  Route::get('/downloadbook/{book_id}', array(
+	'as' => 'downloadbook',
+	'uses' => 'BooksUserController@download'
+    ));
 
 
 
