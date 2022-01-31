@@ -94,12 +94,6 @@ Route::group(['middleware' => ['auth']] , function() {
 		));
 
 
-	// Render All Books panel admin
-    Route::get('/all-books', array(
-        'as' => 'all-books',
-        'uses' => 'BooksController@renderAllBooks'
-	));
-
 	// Render Add Books panel admin
     Route::get('/add-books', array(
         'as' => 'add-books',
@@ -183,13 +177,13 @@ Route::group(['middleware' => ['auth']] , function() {
 		));
 	
 
-   // Render form update profil panel user 
+   // Render form update user panel admin 
    Route::get('/updateuserform/{user_id}', array(
 	'as' => 'updateuserform',
 	'uses' => 'UserController@updateuserform'
     ));
 
-   // Render update profil panel user 
+   // Render update user panel admin 
    Route::post('/updateuser', array(
 	'as' => 'updateuser',
 	'uses' => 'UserController@updateuser'
@@ -204,7 +198,25 @@ Route::group(['middleware' => ['auth']] , function() {
     ));
 
 
+  // Render form update book panel admin 
+   Route::get('/updatebookform/{book_id}', array(
+	'as' => 'updatebookform',
+	'uses' => 'BooksController@edit'
+    ));
 
+   // Render update book panel admin 
+   Route::post('/updatebook', array(
+	'as' => 'updatebook',
+	'uses' => 'BooksController@update'
+    ));
+
+
+  
+  // Render delete  book panel admin 
+  Route::any('/deletebook/{book_id}', array(
+	'as' => 'deletebook',
+	'uses' => 'BooksController@destroy'
+    ));
 
 
 

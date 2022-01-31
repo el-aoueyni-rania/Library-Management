@@ -120,3 +120,25 @@
 				</div>
 			</div>
 @endif
+
+
+
+@if(Session::has('updatebook'))
+			<div style="color: green" class="row">
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					{{ Session::get('updatebook') }}
+				</div>
+			</div>
+@endif
+
+
+
+@if(Session::has('deletebook'))
+			<div style="color: red" class="row">
+				<div class="alert alert-danger">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					{{ Session::get('deletebook') }}
+				</div>
+			</div>
+@endif

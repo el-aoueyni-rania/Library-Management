@@ -32,12 +32,16 @@
                         <td> {{ $book -> description }} </td>
                         <td> {{ $book -> total }} </td>
                         <td>
-                            <a href="#"
+                            <a href="{{ URL::route('updatebookform' , [$book -> book_id]) }}"
                                 title=" edit book : {{ $book->book_id }} ">
                                 <i class="fas fa-edit"></i></a>
                             <a href="#"
-                                title=" delete book : {{ $book->book_id }} ">
+                                title=" delete book : {{ $book->book_id }} "
+                                onclick="event.preventDefault(); document.querySelector('#delete-book-form').submit()">
                                 <i class="fas fa-trash-alt"></i></a>
+                                <form
+                                action="{{ route('deletebook',[ $book->book_id ]) }}"
+                                method="post" id="delete-book-form"> @csrf @method('DELETE')</form>
                         </td>
 
                     </tr>

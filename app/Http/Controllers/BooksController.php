@@ -32,32 +32,6 @@ class BooksController extends Controller
 	public function index()
 	{
 
-		$book_list = Books::select('book_id','title','author','description','book_categories.category')
-		->join('book_categories', 'book_categories.id', '=', 'books.category_id')
-			->orderBy('book_id')->get();
-		// dd($book_list);
-		// $this->filterQuery($book_list);
-
-		// $book_list = $book_list->get();
-
-		for($i=0; $i<count($book_list); $i++){
-
-	        $id = $book_list[$i]['book_id'];
-	        $conditions = array(
-	        	'book_id'			=> $id,
-	        	'available_status'	=> 1
-        	);
-
-	        $book_list[$i]['total_books'] = Issue::select()
-	        	->where('book_id','=',$id)
-	        	->count();
-
-	        $book_list[$i]['avaliable'] = Issue::select()
-	        	->where($conditions)
-	        	->count();
-		}
-
-        return $book_list;
 	}
 
 	public function indexCategory($id)
@@ -123,27 +97,7 @@ class BooksController extends Controller
 	 */
 	public function show($string)
 	{
-		$book_list = Books::select('book_id','title','author','description','book_categories.category')
-		->join('book_categories', 'book_categories.id', '=', 'books.category_id')
-			->where('title', 'like', '%' . $string . '%')
-			->orWhere('author', 'like', '%' . $string . '%')
-			->orderBy('book_id');
-
-		$book_list = $book_list->get();
-
-		foreach($book_list as $book){
-			$conditions = array(
-				'book_id'			=> $book->book_id,
-				'available_status'	=> 1
-			);
-
-			$count = Issue::where($conditions)
-				->count();
-
-			$book->avaliability = ($count > 0) ? true : false;
-		}
-
-        return $book_list;
+		
 	}
 
 
@@ -155,7 +109,11 @@ class BooksController extends Controller
 	 */
 	public function edit($id)
 	{
-		
+		$categories_list = DB::table('book_categories')->get();
+
+		$book = DB::table('books')->where('book_id', $id)->get();
+
+        return view('panel.updatebookform', ['book' => $book , 'categories_list'=> $categories_list]);
 	}
 
 	/**
@@ -164,9 +122,27 @@ class BooksController extends Controller
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request)
 	{
-		//
+		
+        if($request->hasFile('photo')){
+            $photo = $request->file('photo');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $photo->move('uploads/books/' , $filename);
+         }
+        $book_id = $request->book_id;
+        $title = $request->title;
+        $author = $request->author;
+        $description = $request->description;
+		$category =$request->category;
+        $total = $request->total;
+        $photo = $filename;
+
+
+        DB::table('books')->where('book_id', $book_id)->update(['title' => $title , 'author' => $author , 'description' => $description , 'category_id' => $category , 'total' => $total , 'photo' => $photo]);
+        return redirect()->route('all-bookscategoryadmin' ,  [$category])->with('updatebook' , 'Book updated successfully !!!');
+
+
 	}
 
 
@@ -178,7 +154,12 @@ class BooksController extends Controller
 	 */
 	public function destroy($id)
 	{
-		//
+		$book = DB::table('books')->where('book_id', $id)->first();
+        $cat = $book->category_id;
+
+		DB::table('books')->where('book_id', $id)->delete();
+
+        return redirect()->route('all-bookscategoryadmin' ,  [$cat])->with('deletebook' , 'book has been deleted successfully !!!');
 	}
 
     public function renderAddBooks() {
@@ -189,39 +170,5 @@ class BooksController extends Controller
     }
 
 
-    public function renderAllBooks() {
-        $db_control = new HomeController();
-
-		return view('panel.allbook')
-            ->with('categories_list', $db_control->categories_list);
-	}
-	
-	public function BookByCategory($cat_id)
-	{
-		$book_list = Books::select('book_id','title','author','description','book_categories.category')
-		->join('book_categories', 'book_categories.id', '=', 'books.category_id')
-			->where('category_id', $cat_id)->orderBy('book_id');
-
-			$book_list = $book_list->get();
-
-			for($i=0; $i<count($book_list); $i++){
-
-				$id = $book_list[$i]['book_id'];
-				$conditions = array(
-					'book_id'			=> $id,
-					'available_status'	=> 1
-				);
-	
-				$book_list[$i]['total_books'] = Issue::select()
-					->where('book_id','=',$id)
-					->count();
-	
-				$book_list[$i]['avaliable'] = Issue::select()
-					->where($conditions)
-					->count();
-			}
-	
-			return $book_list;
-	}
-
+    
 }
