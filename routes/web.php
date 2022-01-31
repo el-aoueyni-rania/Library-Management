@@ -257,10 +257,19 @@ Route::group(['middleware' => ['auth']] , function() {
     ));
 
 
+	
 
+  // Render form update profil panel user 
+  Route::get('/updateprofilform', array(
+	'as' => 'updateprofilform',
+	'uses' => 'UserController@edit'
+    ));
 
-
-
+  // Render update profil panel user 
+  Route::post('/updateprofil', array(
+	'as' => 'updateprofil',
+	'uses' => 'UserController@update'
+    ));
 
 
 

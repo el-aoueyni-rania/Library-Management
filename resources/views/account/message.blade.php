@@ -91,3 +91,11 @@
 			</div>
 @endif
 
+@if(Session::has('updateprofil'))
+			<div style="color: green" class="row">
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					{{ Session::get('updateprofil') }}
+				</div>
+			</div>
+@endif

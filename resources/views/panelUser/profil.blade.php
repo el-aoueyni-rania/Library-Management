@@ -22,7 +22,7 @@
               <h5 class="card-title"> Role : {{ $user -> role }} </h5>
             </div>
             <div class="card-footer">
-              <button style="color: black">Update Your Profil</button>
+              <a style="color: black" href="{{ URL::route('updateprofilform') }}">Update profil</a>
             </div>
           </div>
         </div>

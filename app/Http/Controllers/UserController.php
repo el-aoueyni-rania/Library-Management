@@ -31,6 +31,7 @@ class UserController extends Controller
         return view('panelUser.profil', ['listuser' => $listuser]);
     }
 
+  
     /**
      * Show the form for creating a new resource.
      *
@@ -69,9 +70,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('panelUser.updateprofilform');
     }
 
     /**
@@ -81,9 +82,27 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    
+    public function update(Request $request)
     {
-        //
+        $user_id = Auth::id();
+
+        if($request->hasFile('photo')){
+            $photo = $request->file('photo');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $photo->move('uploads/users/' , $filename);
+         }
+
+        $firstname = $request->firstname;
+        $lastname = $request->lastname;
+        $email = $request->email;
+        $photoU = $filename;
+
+
+        DB::table('users')->where('id', $user_id)->update(['firstname' => $firstname , 'lastname' => $lastname , 'email' => $email , 'photoU' => $photoU]);
+        return redirect()->route('profil')->with('updateprofil' , 'Profil updated successfully !!!');
+
+
     }
 
     /**
