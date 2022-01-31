@@ -70,9 +70,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit()
     {
         return view('panelUser.updateprofilform');
+    }
+
+    public function updateuserform($id)
+    {
+        $user = DB::table('users')->where('id', $id)->get();
+
+        return view('panel.updateuserform', ['user' => $user]);
+
     }
 
     /**
@@ -101,6 +110,31 @@ class UserController extends Controller
 
         DB::table('users')->where('id', $user_id)->update(['firstname' => $firstname , 'lastname' => $lastname , 'email' => $email , 'photoU' => $photoU]);
         return redirect()->route('profil')->with('updateprofil' , 'Profil updated successfully !!!');
+
+
+    }
+
+
+    
+
+    public function updateuser(Request $request)
+    {
+
+        if($request->hasFile('photo')){
+            $photo = $request->file('photo');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $photo->move('uploads/users/' , $filename);
+         }
+        $id = $request->id;
+        $firstname = $request->firstname;
+        $lastname = $request->lastname;
+        $email = $request->email;
+        $role = $request->role;
+        $photoU = $filename;
+
+
+        DB::table('users')->where('id', $id)->update(['firstname' => $firstname , 'lastname' => $lastname , 'email' => $email , 'role' => $role , 'photoU' => $photoU]);
+        return redirect()->route('listuser')->with('updateuser' , 'User updated successfully !!!');
 
 
     }

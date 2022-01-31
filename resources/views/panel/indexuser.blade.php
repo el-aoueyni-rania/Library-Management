@@ -27,7 +27,7 @@
                         <td> {{ $user -> email }} </td>
                         <td> {{ $user -> role }} </td>
                         <td>
-                        <a href="#"
+                        <a href="{{ URL::route('updateuserform' , [$user -> id]) }}"
                             title=" edit utilisateur : {{ $user->id }} ">
                             <i class="fas fa-edit"></i></a>
                         <a href="#"
