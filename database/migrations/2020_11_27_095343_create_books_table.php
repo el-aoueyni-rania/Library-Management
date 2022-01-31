@@ -20,7 +20,7 @@ class CreateBooksTable extends Migration
             $table->text('description');
             $table->string('photo');
             $table->integer('category_id')->unsigned();
-            $table->integer('added_by')->unsigned();
+            $table->string('fichierpdf');
             $table->integer('total');
             $table->timestamps();
         });

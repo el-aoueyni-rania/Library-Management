@@ -59,6 +59,13 @@
                 </div>
 
                 <div class="control-group">
+                    <label class="control-label">Version PDF </label>
+                    <div class="controls">
+                        <input type="file" name="fichierpdf" class="span8">
+                    </div>
+                </div>
+
+                <div class="control-group">
                     <div class="controls">
                         <button type="submit" class="btn btn-inverse" id="">Add Book</button>
                     </div>

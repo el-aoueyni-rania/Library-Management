@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Books extends Model
 {
-    protected $fillable = array('book_id', 'title', 'author', 'category_id', 'description', 'photo' , 'added_by' , 'total');
+    protected $fillable = array('book_id', 'title', 'author', 'category_id', 'description', 'photo' , 'fichierpdf' , 'total');
 
     public $timestamps = false;
 

@@ -72,8 +72,12 @@ class BooksController extends Controller
 			$photo->move('uploads/books/' , $filename);
 		 }
 
-
-		$user_id = Auth::id();
+		 
+		if($request->hasFile('fichierpdf')){
+			$fichierpdf = $request->file('fichierpdf');
+			$pdfname = time() . '.' . $fichierpdf->getClientOriginalExtension();
+			$fichierpdf->move('uploads/files/' , $pdfname);
+		 }
 
 		$book = new Books;
 		$book->title = $request->title;
@@ -81,7 +85,7 @@ class BooksController extends Controller
 		$book->description = $request->description;
 		$book->photo = $filename;
 		$book->category_id = $request->category;
-		$book->added_by =$user_id ;
+		$book->fichierpdf = $pdfname ;
 		$book->total = $request->total;
 
 		$book->save();
