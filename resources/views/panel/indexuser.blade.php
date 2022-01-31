@@ -31,8 +31,12 @@
                             title=" edit utilisateur : {{ $user->id }} ">
                             <i class="fas fa-edit"></i></a>
                         <a href="#"
-                            title=" delete utilisateur : {{ $user->id }} ">
+                            title=" delete utilisateur : {{ $user->id }} "
+                            onclick="event.preventDefault(); document.querySelector('#delete-user-form').submit()">
                             <i class="fas fa-trash-alt"></i></a>
+                            <form
+                            action="{{ route('deleteuser',[ $user->id ]) }}"
+                            method="post" id="delete-user-form"> @csrf @method('DELETE')</form>
                         </td>
 
                     </tr>

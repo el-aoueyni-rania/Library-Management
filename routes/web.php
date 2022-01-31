@@ -196,7 +196,12 @@ Route::group(['middleware' => ['auth']] , function() {
     ));
 
 
-
+  
+  // Render delete  user panel admin 
+  Route::any('/deleteuser/{user_id}', array(
+	'as' => 'deleteuser',
+	'uses' => 'UserController@destroy'
+    ));
 
 
 
