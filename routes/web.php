@@ -323,7 +323,11 @@ Route::group(['middleware' => ['auth']] , function() {
 
 
 
-
+  // Render send mail panel user 
+  Route::get('/sendmail', array(
+	'as' => 'sendmail',
+	'uses' => 'MailController@sendMail'
+    ));
 
 
 

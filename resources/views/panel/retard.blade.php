@@ -33,11 +33,12 @@
                         <td> {{ $emprunt -> Date_EmpruntR }} </td>
                         <td> {{ $emprunt -> Date_retourR }} </td>
                         <td>
-                        
+                        <a href="{{ route('sendmail') }}">
+                            <i class="far fa-envelope"></i></a>
                         <a href="#"
                             title=" delete emprunt : {{ $emprunt->id }} "
                             onclick="event.preventDefault(); document.querySelector('#delete-empruntr-form').submit()">
-                            <i class="fas fa-trash-alt"></i>Delete</a>
+                            <i class="fas fa-trash-alt"></i></a>
                             <form
                                 action="{{ route('deleteempruntretard',[ $emprunt->id ]) }}"
                                 method="post" id="delete-empruntr-form"> @csrf @method('DELETE')</form>
