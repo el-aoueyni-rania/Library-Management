@@ -14,4 +14,12 @@ class EmpruntConfirmer extends Model
 	protected $primaryKey = 'id';
 
 	protected $hidden = array();
+
+	public function emprunt(){
+		return $this->belongsTo('App\Emprunt');
+	}
+
+	public function book_retard(){
+		return $this->hasOne('App\BookRetard');
+	}
 }

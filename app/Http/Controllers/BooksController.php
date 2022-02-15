@@ -2,20 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Logs;
-use App\Models\Books;
-use App\Models\Issue;
-use App\Models\Branch;
-use App\Models\Student;
-use App\Models\Categories;
+use App\Book;
 use Illuminate\Http\Request;
-use App\Models\BookCategories;
-use App\Models\StudentCategories;
+use App\BookCategorie;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\HomeController;
-use Exception;
-
 class BooksController extends Controller
 {
     public function __construct(){
@@ -79,7 +69,7 @@ class BooksController extends Controller
 			$fichierpdf->move('uploads/files/' , $pdfname);
 		 }
 
-		$book = new Books;
+		$book = new Book;
 		$book->title = $request->title;
 		$book->author = $request->author;
 		$book->description = $request->description;

@@ -15,7 +15,7 @@ class CreateBookRetardsTable extends Migration
     {
         Schema::create('book_retards', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_idR')->unsigned();
+            $table->integer('user_idR');
             $table->string('firstnameR')->nullable();
             $table->string('lastnameR')->nullable();
             $table->string('emailR')->nullable();
@@ -23,6 +23,7 @@ class CreateBookRetardsTable extends Migration
             $table->date('Date_EmpruntR');
             $table->date('Date_retourR');
             $table->timestamps();
+
         });
     }
 

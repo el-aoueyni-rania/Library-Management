@@ -15,7 +15,7 @@ class CreateEmpruntConfirmersTable extends Migration
     {
         Schema::create('emprunt_confirmers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_idC')->unsigned();
+            $table->integer('user_idC');
             $table->string('firstnameUC')->nullable();
             $table->string('lastnameUC')->nullable();
             $table->string('emailUC')->nullable();
@@ -23,6 +23,7 @@ class CreateEmpruntConfirmersTable extends Migration
             $table->date('Date_EmpruntC');
             $table->date('Date_retourC');
             $table->timestamps();
+
         });
     }
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Books extends Model
+class Book extends Model
 {
     protected $fillable = array('book_id', 'title', 'author', 'category_id', 'description', 'photo' , 'fichierpdf' , 'total');
 
@@ -20,4 +20,13 @@ class Books extends Model
     {
         return $this::count();
     }
+
+    public function emprunt()
+    {
+        return $this->hasMany('App\Emprunt');
+    }
+
+    public function book_categorie(){
+		return $this->belongsTo('App\BookCategorie');
+	}
 }

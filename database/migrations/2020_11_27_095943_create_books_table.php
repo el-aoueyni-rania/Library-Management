@@ -19,10 +19,12 @@ class CreateBooksTable extends Migration
             $table->string('author', 1000);
             $table->text('description');
             $table->string('photo');
-            $table->integer('category_id')->unsigned();
+            $table->bigInteger('category_id')->unsigned()->nullable();
             $table->string('fichierpdf');
             $table->integer('total');
             $table->timestamps();
+            $table->foreign('category_id')->references('id')->on('book_categories')->onDelete('set null')->onUpdate('set null');
+
         });
     }
 

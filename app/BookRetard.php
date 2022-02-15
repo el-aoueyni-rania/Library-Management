@@ -14,4 +14,9 @@ class BookRetard extends Model
 	protected $primaryKey = 'id';
 
 	protected $hidden = array();
+
+
+	public function emprunt_confirme(){
+		return $this->belongsTo('App\EmpruntConfirmer');
+	}
 }
