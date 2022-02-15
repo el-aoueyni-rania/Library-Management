@@ -15,7 +15,8 @@ class CreateEmpruntsTable extends Migration
     {
         Schema::create('emprunts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('book_id')->unsigned();
             $table->string('firstnameU')->nullable();
             $table->string('lastnameU')->nullable();
             $table->string('emailU')->nullable();
@@ -23,6 +24,9 @@ class CreateEmpruntsTable extends Migration
             $table->date('Date_Emprunt');
             $table->date('Date_retour');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('no action')->onUpdate('no action');
+            $table->foreign('book_id')->references('book_id')->on('books')->onDelete('no action')->onUpdate('no action');
+
         });
     }
 

@@ -2,20 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Logs;
-use App\Models\Books;
-use App\Models\Issue;
-use App\Models\Branch;
-use App\Models\Student;
-use App\Models\Categories;
+use App\Book;
 use Illuminate\Http\Request;
-use App\Models\BookCategories;
-use App\Models\StudentCategories;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\UploadedFile;
 use App\Http\Controllers\HomeController;
-use Exception;
 
 class BooksUserController extends Controller
 {
@@ -77,7 +68,7 @@ class BooksUserController extends Controller
 
 			$user_id = Auth::id();
 
-			$book = new Books;
+			$book = new Book;
 			$book->title = $request->title;
 			$book->author = $request->author;
 			$book->description = $request->description;
@@ -149,7 +140,7 @@ class BooksUserController extends Controller
     {
         $q = request()->input('q');
 
-        $books = Books::where('title' , 'like' , "%$q%")
+        $books = Book::where('title' , 'like' , "%$q%")
               ->orwhere('author' , 'like' , "%$q%")->get();
               return view('panelUser.search')->with('books' , $books);
     }
