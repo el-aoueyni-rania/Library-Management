@@ -15,7 +15,6 @@ class CreateBookRetardsTable extends Migration
     {
         Schema::create('book_retards', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('emp_idc')->unsigned();
             $table->integer('user_idR');
             $table->string('firstnameR')->nullable();
             $table->string('lastnameR')->nullable();
@@ -24,7 +23,6 @@ class CreateBookRetardsTable extends Migration
             $table->date('Date_EmpruntR');
             $table->date('Date_retourR');
             $table->timestamps();
-            $table->foreign('emp_idc')->references('id')->on('emprunt_confirmers')->onDelete('no action')->onUpdate('no action');
 
         });
     }

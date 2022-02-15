@@ -41,7 +41,7 @@ class EmpruntConfirmerController extends Controller
     {
         $emprunt = DB::table('emprunts')->where('id', $id)->first();
 
-        $title = $emprunt->titleB;
+        $book_id = $emprunt->book_id;
 
         $emprunttt = new EmpruntConfirmer() ; 
         $emprunttt->user_idC = $emprunt->user_id;
@@ -56,7 +56,7 @@ class EmpruntConfirmerController extends Controller
 
         DB::table('emprunts')->where('id', $id)->delete();
 
-        DB::table('books')->where('title', $title)->decrement('total');
+        DB::table('books')->where('book_id', $book_id)->decrement('total');
 
         
         return redirect()->route('listempruntconfirmer', $emprunttt)->with('storeempruntconfirmer' , 'Emprunt confirmer successfully !!!');
