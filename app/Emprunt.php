@@ -19,7 +19,13 @@ class Emprunt extends Model
 		return $this->belongsTo('App\User');
 	}
 	public function book(){
-		return $this->belongsTo('App\models\Books');
+		return $this->belongsTo('App\Book');
+	}
+
+	
+
+	public function emp_conf(){
+		return $this->hasOne('App\EmpruntConfirmer');
 	}
 
 }
