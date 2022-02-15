@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BookCategories;
+use App\BookCategorie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -60,7 +60,7 @@ class CategoryController extends Controller
             $photo->move('uploads/categories/' , $filename);
          }
 
-        $category = new BookCategories;
+        $category = new BookCategorie;
         $category->category = $request->category;
         $category->photoC = $filename;
         $category->save();
@@ -74,7 +74,7 @@ class CategoryController extends Controller
      * @param  \App\Models\BookCategories  $bookCategories
      * @return \Illuminate\Http\Response
      */
-    public function show(BookCategories $bookCategories)
+    public function show(BookCategorie $bookCategories)
     {
         //
     }
@@ -85,7 +85,7 @@ class CategoryController extends Controller
      * @param  \App\Models\BookCategories  $bookCategories
      * @return \Illuminate\Http\Response
      */
-    public function edit(BookCategories $bookCategories)
+    public function edit(BookCategorie $bookCategories)
     {
         //
     }
@@ -97,7 +97,7 @@ class CategoryController extends Controller
      * @param  \App\Models\BookCategories  $bookCategories
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BookCategories $bookCategories)
+    public function update(Request $request, BookCategorie $bookCategories)
     {
         //
     }
@@ -108,7 +108,7 @@ class CategoryController extends Controller
      * @param  \App\Models\BookCategories  $bookCategories
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BookCategories $bookCategories)
+    public function destroy(BookCategorie $bookCategories)
     {
         //
     }

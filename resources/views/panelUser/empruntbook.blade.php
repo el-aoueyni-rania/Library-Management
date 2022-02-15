@@ -36,6 +36,8 @@
                 <div class="control-group">
                     <label class="control-label">Title Of The Book</label>
                     <div class="controls">
+                        <input type="" name="id_book"   value=" {{ $book -> book_id }} " class="span8" hidden>
+
                         <input type="text" name="titleB"   value=" {{ $book -> title }} " class="span8" readonly>
                     </div>
                 </div>
