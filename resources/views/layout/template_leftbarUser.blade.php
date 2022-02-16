@@ -20,7 +20,7 @@
             </li>
             <li>
                 <a href="{{ URL::route('profil') }}">
-                    <i class="menu-icon icon-cog"></i> <strong>  Settings </strong> 
+                    <i class="menu-icon fas fa-user-alt"></i><strong>  Profil </strong> 
                 </a>
             </li>
 

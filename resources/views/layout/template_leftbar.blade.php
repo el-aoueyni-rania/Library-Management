@@ -17,7 +17,7 @@
             </li>
             <li>
                 <a href="{{ URL::route('add-books') }}">
-                    <i class="menu-icon icon-folder-open-alt"></i> <strong> Add Books </strong> 
+                    <i class="menu-icon icon-folder-open-alt"></i> <strong> Add Book </strong> 
                 </a>
             </li>
             <li>
@@ -27,13 +27,13 @@
             </li>
             <li>
                 <a href="{{ URL::route('listempruntconfirmer') }}">
-                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> All approved Students  </strong> 
+                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> All confirmed books  </strong> 
                 </a>
             </li>
 
             <li>
                 <a href="{{ URL::route('listeretard') }}">
-                    <i class=" menu-icon fas fa-book-reader"></i>  <strong> View all currently issued books   </strong> 
+                    <i class=" menu-icon fas fa-book-reader"></i>  <strong>All books not returned  </strong> 
                 </a>
             </li>
 

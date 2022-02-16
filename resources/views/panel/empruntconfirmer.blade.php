@@ -3,7 +3,7 @@
 <div class="content">
     <div class="module">
         <div class="module-head">
-            <h3>List Of Emprunts Confirmer</h3>
+            <h3>List Of  Confirmed Borrower </h3>
         </div>
         <div class="module-body">
 

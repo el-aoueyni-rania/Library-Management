@@ -11,8 +11,8 @@
                 <thead>
                     <tr>
                         <th>Title Book</th>
-                        <th>Date Emprunt</th>
-                        <th>Date Retour</th>
+                        <th> Borrow Date </th>
+                        <th> Return Date </th>
                     </tr>
                 </thead>
                 <tbody id="all-books">
