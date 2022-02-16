@@ -23,7 +23,7 @@ class CreateBooksTable extends Migration
             $table->string('fichierpdf');
             $table->integer('total');
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('book_categories')->onDelete('set null')->onUpdate('set null');
+            $table->foreign('category_id')->references('id')->on('book_categories')->onDelete('set null')->onUpdate('cascade');
 
         });
     }

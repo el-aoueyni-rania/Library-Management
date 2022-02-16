@@ -22,10 +22,10 @@ class CreateEmpruntConfirmersTable extends Migration
             $table->date('Date_EmpruntC');
             $table->date('Date_retourC');
             $table->timestamps();
-            $table->foreign('user_idC')->references('id')->on('users')->onDelete('set null')->onUpdate('set null');
-            $table->foreign('book_idC')->references('book_id')->on('books')->onDelete('set null')->onUpdate('set null');
-            $table->foreign('emailC')->references('email')->on('users')->onDelete('set null')->onUpdate('set null');
-            $table->foreign('titleC')->references('title')->on('books')->onDelete('set null')->onUpdate('set null');
+            $table->foreign('user_idC')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('book_idC')->references('book_id')->on('books')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('emailC')->references('email')->on('users')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('titleC')->references('title')->on('books')->onDelete('set null')->onUpdate('cascade');
 
 
         });

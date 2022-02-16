@@ -5,7 +5,7 @@
 <div class="content">
     <div class="module">
         <div class="module-head">
-            <h3>Add Books</h3>
+            <h3>Add Book</h3>
         </div>
         <div class="module-body">
             <form class="form-horizontal row-fluid" action="{{ URL::route('add-bookform') }}" method="POST" enctype="multipart/form-data">

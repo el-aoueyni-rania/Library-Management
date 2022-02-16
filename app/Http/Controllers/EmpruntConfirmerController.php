@@ -45,10 +45,9 @@ class EmpruntConfirmerController extends Controller
 
         $emprunttt = new EmpruntConfirmer() ; 
         $emprunttt->user_idC = $emprunt->user_id;
-        $emprunttt->firstnameUC = $emprunt->firstnameU;
-        $emprunttt->lastnameUC = $emprunt->lastnameU;
-        $emprunttt->emailUC = $emprunt->emailU;
-        $emprunttt->titleBC = $emprunt->titleB;
+        $emprunttt->book_idC = $emprunt->book_id;
+        $emprunttt->emailC = $emprunt->emailU;
+        $emprunttt->titleC = $emprunt->titleB;
         $emprunttt->Date_EmpruntC = $emprunt->Date_Emprunt;
         $emprunttt->Date_retourC = $emprunt->Date_retour;
 

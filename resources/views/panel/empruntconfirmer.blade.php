@@ -3,7 +3,7 @@
 <div class="content">
     <div class="module">
         <div class="module-head">
-            <h3>List Of Emprunts Confirmer</h3>
+            <h3>List Of  Confirmed Borrower </h3>
         </div>
         <div class="module-body">
 
@@ -12,8 +12,7 @@
                     <tr>
                         <th>ID</th>
                         <th>ID User</th>
-                        <th>First Name User</th>
-                        <th>Last Name User</th>
+                        <th>ID Book</th>
                         <th>Email User</th>
                         <th>Title Book</th>
                         <th>Date Emprunt</th>
@@ -26,10 +25,9 @@
                     <tr class="text-center">
                         <td> {{ $emprunt -> id }} </td>
                         <td> {{ $emprunt -> user_idC }} </td>
-                        <td> {{ $emprunt -> firstnameUC}} </td>
-                        <td> {{ $emprunt -> lastnameUC }} </td>
-                        <td> {{ $emprunt -> emailUC }} </td>
-                        <td> {{ $emprunt -> titleBC }} </td>
+                        <td> {{ $emprunt -> book_idC }} </td>
+                        <td> {{ $emprunt -> emailC }} </td>
+                        <td> {{ $emprunt -> titleC }} </td>
                         <td> {{ $emprunt -> Date_EmpruntC }} </td>
                         <td> {{ $emprunt -> Date_retourC }} </td>
                         <td>
