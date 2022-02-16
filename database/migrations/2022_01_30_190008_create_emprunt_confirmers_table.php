@@ -15,14 +15,18 @@ class CreateEmpruntConfirmersTable extends Migration
     {
         Schema::create('emprunt_confirmers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_idC');
-            $table->string('firstnameUC')->nullable();
-            $table->string('lastnameUC')->nullable();
-            $table->string('emailUC')->nullable();
-            $table->string('titleBC', 1000);
+            $table->bigInteger('user_idC')->unsigned()->nullable();
+            $table->bigInteger('book_idC')->unsigned()->nullable();
+            $table->string('emailC')->nullable();
+            $table->string('titleC')->nullable();
             $table->date('Date_EmpruntC');
             $table->date('Date_retourC');
             $table->timestamps();
+            $table->foreign('user_idC')->references('id')->on('users')->onDelete('set null')->onUpdate('set null');
+            $table->foreign('book_idC')->references('book_id')->on('books')->onDelete('set null')->onUpdate('set null');
+            $table->foreign('emailC')->references('email')->on('users')->onDelete('set null')->onUpdate('set null');
+            $table->foreign('titleC')->references('title')->on('books')->onDelete('set null')->onUpdate('set null');
+
 
         });
     }
