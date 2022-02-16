@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Emprunt extends Model
 {
-    protected $fillable = array('id' , 'user_id' , 'book_id' , 'firstnameU', 'lastnameU', 'emailU' , 'titleB', 'Date_Emprunt' , 'Date_retour');
+    protected $fillable = array('id' , 'user_id' , 'book_id' , 'emailU' , 'titleB', 'Date_Emprunt' , 'Date_retour');
 
     public $timestamps = false;
 

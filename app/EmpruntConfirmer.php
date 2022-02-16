@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class EmpruntConfirmer extends Model
 {
-    protected $fillable = array('id' , 'user_idC' , 'firstnameUC', 'lastnameUC', 'emailUC' , 'titleBC', 'Date_EmpruntC' , 'Date_retourC');
+    protected $fillable = array('id' , 'user_idC' , 'book_idC', '', 'emailC' , 'titleC', 'Date_EmpruntC' , 'Date_retourC');
 
     public $timestamps = false;
 
