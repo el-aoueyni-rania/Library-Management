@@ -12,8 +12,7 @@
                     <tr>
                         <th>ID</th>
                         <th>ID User</th>
-                        <th>First Name User</th>
-                        <th>Last Name User</th>
+                        <th>ID Book</th>
                         <th>Email User</th>
                         <th>Title Book</th>
                         <th>Date Emprunt</th>
@@ -26,8 +25,7 @@
                     <tr class="text-center">
                         <td> {{ $emprunt -> id }} </td>
                         <td> {{ $emprunt -> user_id }} </td>
-                        <td> {{ $emprunt -> firstnameU}} </td>
-                        <td> {{ $emprunt -> lastnameU }} </td>
+                        <td> {{ $emprunt -> book_id }} </td>
                         <td> {{ $emprunt -> emailU }} </td>
                         <td> {{ $emprunt -> titleB }} </td>
                         <td> {{ $emprunt -> Date_Emprunt }} </td>

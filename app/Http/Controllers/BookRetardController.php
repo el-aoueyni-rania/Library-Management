@@ -44,10 +44,9 @@ class BookRetardController extends Controller
 
         $retard = new BookRetard() ; 
         $retard->user_idR = $empruntC->user_idC;
-        $retard->firstnameR = $empruntC->firstnameUC;
-        $retard->lastnameR = $empruntC->lastnameUC;
-        $retard->emailR = $empruntC->emailUC;
-        $retard->titleR = $empruntC->titleBC;
+        $retard->book_idR = $empruntC->book_idC;
+        $retard->emailR = $empruntC->emailC;
+        $retard->titleR = $empruntC->titleC;
         $retard->Date_EmpruntR = $empruntC->Date_EmpruntC;
         $retard->Date_retourR = $empruntC->Date_retourC;
 

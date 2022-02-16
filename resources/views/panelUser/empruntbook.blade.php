@@ -12,19 +12,6 @@
         <div class="module-body">
             <form class="form-horizontal row-fluid" action="{{ URL::route('bookempruntform') }}" method="POST">
                 @csrf
-
-                <div class="control-group">
-                    <label class="control-label">First Name</label>
-                    <div class="controls">
-                        <input type="text" name="firstnameU"   value="{{ auth()->user()->firstname }}" class="span8" readonly>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Last Name</label>
-                    <div class="controls">
-                        <input type="text" name="lastnameU"   value="{{ auth()->user()->lastname }}" class="span8" readonly>
-                    </div>
-                </div>
                 <div class="control-group">
                     <label class="control-label">Email </label>
                     <div class="controls">

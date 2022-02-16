@@ -10,7 +10,6 @@
             <table class="table table-striped table-bordered table-condensed">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Title Book</th>
                         <th>Date Emprunt</th>
                         <th>Date Retour</th>
@@ -19,7 +18,6 @@
                 <tbody id="all-books">
                     @foreach ($listemprunt as $key => $emprunt)
                     <tr class="text-center">
-                        <td> {{ $emprunt -> id }} </td>
                         <td> {{ $emprunt -> titleB }} </td>
                         <td> {{ $emprunt -> Date_Emprunt }} </td>
                         <td> {{ $emprunt -> Date_retour }} </td>

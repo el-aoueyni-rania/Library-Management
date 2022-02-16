@@ -68,8 +68,6 @@ class EmpruntController extends Controller
         $emprunt = new Emprunt() ; 
         $emprunt->user_id = $user_id;
         $emprunt->book_id = $request->id_book;
-        $emprunt->firstnameU = $request->firstnameU;
-        $emprunt->lastnameU = $request->lastnameU;
         $emprunt->emailU = $request->emailU;
         $emprunt->titleB = $request->titleB;
         $emprunt->Date_Emprunt = $request->Date_Emprunt;
