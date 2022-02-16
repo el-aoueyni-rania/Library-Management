@@ -22,10 +22,10 @@ class CreateEmpruntsTable extends Migration
             $table->date('Date_Emprunt');
             $table->date('Date_retour');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('set null');
-            $table->foreign('book_id')->references('book_id')->on('books')->onDelete('set null')->onUpdate('set null');
-            $table->foreign('emailU')->references('email')->on('users')->onDelete('set null')->onUpdate('set null');
-            $table->foreign('titleB')->references('title')->on('books')->onDelete('set null')->onUpdate('set null');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('book_id')->references('book_id')->on('books')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('emailU')->references('email')->on('users')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('titleB')->references('title')->on('books')->onDelete('set null')->onUpdate('cascade');
 
         });
     }

@@ -22,10 +22,10 @@ class CreateBookRetardsTable extends Migration
             $table->date('Date_EmpruntR');
             $table->date('Date_retourR');
             $table->timestamps();
-            $table->foreign('user_idR')->references('id')->on('users')->onDelete('set null')->onUpdate('set null');
-            $table->foreign('book_idR')->references('book_id')->on('books')->onDelete('set null')->onUpdate('set null');
-            $table->foreign('emailR')->references('email')->on('users')->onDelete('set null')->onUpdate('set null');
-            $table->foreign('titleR')->references('title')->on('books')->onDelete('set null')->onUpdate('set null');
+            $table->foreign('user_idR')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('book_idR')->references('book_id')->on('books')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('emailR')->references('email')->on('users')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('titleR')->references('title')->on('books')->onDelete('set null')->onUpdate('cascade');
 
         });
     }
