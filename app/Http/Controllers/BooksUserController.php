@@ -57,30 +57,8 @@ class BooksUserController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		
-
-			 if($request->hasFile('photo')){
-				$photo = $request->file('photo');
-				$filename = time() . '.' . $photo->getClientOriginalExtension();
-				$photo->move('uploads/books/' , $filename);
-			 }
-
-
-			$user_id = Auth::id();
-
-			$book = new Book;
-			$book->title = $request->title;
-			$book->author = $request->author;
-			$book->description = $request->description;
-			$book->photo = $filename;
-			$book->category_id = $request->category;
-			$book->added_by =$user_id ;
-			$book->total = $request->total;
-			
-			$book->save();
-			return redirect()->route('add-bookuser', $book)->with('storeBookUser' , 'Book Added successfully to Database !!!');
-
-			}
+		//
+	}
 			
 
 

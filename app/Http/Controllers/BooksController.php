@@ -71,6 +71,9 @@ class BooksController extends Controller
 			$pdfname = time() . '.' . $fichierpdf->getClientOriginalExtension();
 			$fichierpdf->move('uploads/files/' , $pdfname);
 		 }
+		 else{
+            $pdfname = 'Version PDF Not Found' ;
+        }
 
 		$book = new Book;
 		$book->title = $request->title;
