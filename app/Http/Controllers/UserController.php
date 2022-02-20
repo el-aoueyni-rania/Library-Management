@@ -95,12 +95,16 @@ class UserController extends Controller
     public function update(Request $request)
     {
         $user_id = Auth::id();
-
+        $user = DB::table('users')->where('id', $user_id)->first();
+    
         if($request->hasFile('photo')){
             $photo = $request->file('photo');
             $filename = time() . '.' . $photo->getClientOriginalExtension();
             $photo->move('uploads/users/' , $filename);
          }
+        else{
+            $filename = $user->photoU;
+        }
 
         $firstname = $request->firstname;
         $lastname = $request->lastname;
@@ -119,12 +123,20 @@ class UserController extends Controller
 
     public function updateuser(Request $request)
     {
+        $user_id = $request->id;
+        $user = DB::table('users')->where('id', $user_id)->first();
+
 
         if($request->hasFile('photo')){
             $photo = $request->file('photo');
             $filename = time() . '.' . $photo->getClientOriginalExtension();
             $photo->move('uploads/users/' , $filename);
          }
+
+         else{
+            $filename = $user->photoU;
+        }
+
         $id = $request->id;
         $firstname = $request->firstname;
         $lastname = $request->lastname;

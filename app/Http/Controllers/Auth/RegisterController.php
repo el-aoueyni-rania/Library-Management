@@ -74,7 +74,9 @@ class RegisterController extends Controller
 				$filename = time() . '.' . $photo->getClientOriginalExtension();
 				$photo->move('uploads/users/' , $filename);
 			 }
-
+             else{
+                $filename = 'user.png' ;
+            }
 
             $user = new User ; 
             $user->firstname = $request->firstname;
