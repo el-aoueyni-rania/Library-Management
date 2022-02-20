@@ -59,7 +59,9 @@ class CategoryController extends Controller
             $filename = time() . '.' . $photo->getClientOriginalExtension();
             $photo->move('uploads/categories/' , $filename);
          }
-
+         else{
+            $filename = 'categ.jpg' ;
+        }
         $category = new BookCategorie;
         $category->category = $request->category;
         $category->photoC = $filename;

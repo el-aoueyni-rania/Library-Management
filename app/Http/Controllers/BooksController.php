@@ -62,7 +62,10 @@ class BooksController extends Controller
 			$photo->move('uploads/books/' , $filename);
 		 }
 
-		 
+		 else{
+            $filename = 'book.jpg' ;
+        }
+
 		if($request->hasFile('fichierpdf')){
 			$fichierpdf = $request->file('fichierpdf');
 			$pdfname = time() . '.' . $fichierpdf->getClientOriginalExtension();
@@ -119,15 +122,32 @@ class BooksController extends Controller
 	public function update(Request $request)
 	{
 		
+        $id = $request->book_id;
+        $book = DB::table('books')->where('book_id', $id)->first();
+
         if($request->hasFile('photo')){
             $photo = $request->file('photo');
             $filename = time() . '.' . $photo->getClientOriginalExtension();
             $photo->move('uploads/books/' , $filename);
          }
+
+		 else{
+            $filename = $book->photo;
+        }
+
+
+		if($request->description !=''){
+			$desc = $request->description;
+		}
+		else{
+			$desc = $book->description;
+		}
+
+
         $book_id = $request->book_id;
         $title = $request->title;
         $author = $request->author;
-        $description = $request->description;
+        $description = $desc ;
 		$category =$request->category;
         $total = $request->total;
         $photo = $filename;
