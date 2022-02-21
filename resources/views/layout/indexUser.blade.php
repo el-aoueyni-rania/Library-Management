@@ -34,11 +34,7 @@
 
 <div style="padding: 30px">
         <div class="row">
-            @include('layout.template_leftbarUser')
-            <div class="span9">
-                <div style="margin-left : 30px">
-                @include('account.message')
-            </div>
+            <div style="margin-left : 30px">
                 @yield('content')
             </div>
         </div>    

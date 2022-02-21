@@ -5,12 +5,12 @@
 
 @section('content')
 <div class="content">
-    <div class="module">
+    <div style="margin-left : 180px" class="module">
         <div class="module-head">
             <h3>Borrow Book</h3>
         </div>
         <div class="module-body">
-            <form class="form-horizontal row-fluid" action="{{ URL::route('bookempruntform') }}" method="POST">
+            <form class="form-horizontal " action="{{ URL::route('bookempruntform') }}" method="POST">
                 @csrf
                 <div class="control-group">
                     <label class="control-label">Email </label>

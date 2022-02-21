@@ -1,13 +1,16 @@
 @extends('layout.indexUser')
 @section('content')
 <div class="content">
-    <div class="module">
+    <div style="margin-left : 370px">
+        @include('account.message')
+      </div> 
+    <div class="module" style="margin-left : 130px">
         <div class="module-head">
             <h3>List Of Borrowed Books </h3>
         </div>
         <div class="module-body">
 
-            <table class="table table-striped table-bordered table-condensed">
+            <table style="width:1000px ; " class="table table-striped table-bordered table-condensed">
                 <thead>
                     <tr>
                         <th>Title Book</th>

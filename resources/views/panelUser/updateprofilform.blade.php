@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="content">
-    <div class="module">
+    <div class="module" style="margin-left : 170px">
         <div class="module-head">
             <h3>Update Profil</h3>
         </div>
         <div class="module-body">
-            <form class="form-horizontal row-fluid" action="{{ URL::route('updateprofil') }}" method="POST" enctype="multipart/form-data">
+            <form class="form-horizontal " action="{{ URL::route('updateprofil') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="control-group">
                     <label class="control-label">First Name</label>
