@@ -33,7 +33,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Sales</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Borrow</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">650</div>
                       <div class="mt-2 mb-0 text-muted text-xs">
                         <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="card-body">
                   <div class="mb-3">
-                    <div class="small text-gray-500">Oblong T-Shirt
+                    <div class="small text-gray-500">
                       <div class="small float-right"><b>600 of 800 Items</b></div>
                     </div>
                     <div class="progress" style="height: 12px;">
@@ -146,7 +146,7 @@
                     </div>
                   </div>
                   <div class="mb-3">
-                    <div class="small text-gray-500">Gundam 90'Editions
+                    <div class="small text-gray-500">
                       <div class="small float-right"><b>500 of 800 Items</b></div>
                     </div>
                     <div class="progress" style="height: 12px;">
@@ -155,7 +155,7 @@
                     </div>
                   </div>
                   <div class="mb-3">
-                    <div class="small text-gray-500">Rounded Hat
+                    <div class="small text-gray-500">
                       <div class="small float-right"><b>455 of 800 Items</b></div>
                     </div>
                     <div class="progress" style="height: 12px;">
@@ -164,7 +164,7 @@
                     </div>
                   </div>
                   <div class="mb-3">
-                    <div class="small text-gray-500">Indomie Goreng
+                    <div class="small text-gray-500">
                       <div class="small float-right"><b>400 of 800 Items</b></div>
                     </div>
                     <div class="progress" style="height: 12px;">
@@ -173,7 +173,7 @@
                     </div>
                   </div>
                   <div class="mb-3">
-                    <div class="small text-gray-500">Remote Control Car Racing
+                    <div class="small text-gray-500">
                       <div class="small float-right"><b>200 of 800 Items</b></div>
                     </div>
                     <div class="progress" style="height: 12px;">
