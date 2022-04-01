@@ -22,8 +22,9 @@ class MailController extends Controller
 
         $mail = $book->emailR;
         $details=[
-            'title' => 'rakkk retaaaaard ' ,
-            'body' => 'rajaaa3 lkteeeb ya ham '
+            'title' => '  ' ,
+            'body' => 'Vous avez dépassé la date d échéance d un document !!  
+            Vous devez le retourner le plus tôt possible' 
         ];
         Mail::to($mail)->send(new TestMail($details));
         return redirect()->route('listeretard')->with('sentmail' , 'mail sent successfully to User !!!');

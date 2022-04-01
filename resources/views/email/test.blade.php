@@ -9,7 +9,7 @@
 <body>
     <h1>{{ $details['title']}}</h1>
     <h2>{{ $details['body']}}</h2>
-    <p>Thank you</p>
+    <p>Merci</p>
 
 </body>
 </html>
