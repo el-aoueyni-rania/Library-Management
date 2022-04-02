@@ -18,13 +18,19 @@
 
 
     <div class="main-container">
-        <div class="cardsss">
+        @foreach ($category_list as $key => $category)
+        <ul style="color: black ; font-weight : bold">
+            <li>{{ $category -> category}} </li>
+        </ul>
+        @endforeach
+       {{--  <div class="cardsss">
             @foreach ($category_list as $key => $category)
+            
             <div class="carddd card-1">
                 <h2 class="card__title"> Category  {{ $key }} : {{ $category -> category }}  </h2>
             </div>
             @endforeach
-        </div>
+        </div> --}}
     </div>
 
 

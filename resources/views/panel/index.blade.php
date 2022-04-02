@@ -119,7 +119,7 @@
             <div class="col-xl-4 col-lg-5">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Products Sold</h6>
+                  <h6 class="m-0 font-weight-bold text-primary"> Borrowed Books</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle btn btn-primary btn-sm" href="#" role="button" id="dropdownMenuLink"
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -138,7 +138,7 @@
                 <div class="card-body">
                   <div class="mb-3">
                     <div class="small text-gray-500">
-                      <div class="small float-right"><b>600 of 800 Items</b></div>
+                      <div class="small float-right"><b>30 of 800 books</b></div>
                     </div>
                     <div class="progress" style="height: 12px;">
                       <div class="progress-bar bg-warning" role="progressbar" style="width: 80%" aria-valuenow="80"
@@ -147,7 +147,7 @@
                   </div>
                   <div class="mb-3">
                     <div class="small text-gray-500">
-                      <div class="small float-right"><b>500 of 800 Items</b></div>
+                      <div class="small float-right"><b>50 of 800 books</b></div>
                     </div>
                     <div class="progress" style="height: 12px;">
                       <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70"
@@ -156,7 +156,7 @@
                   </div>
                   <div class="mb-3">
                     <div class="small text-gray-500">
-                      <div class="small float-right"><b>455 of 800 Items</b></div>
+                      <div class="small float-right"><b>70 of 880 books</b></div>
                     </div>
                     <div class="progress" style="height: 12px;">
                       <div class="progress-bar bg-danger" role="progressbar" style="width: 55%" aria-valuenow="55"
@@ -165,7 +165,7 @@
                   </div>
                   <div class="mb-3">
                     <div class="small text-gray-500">
-                      <div class="small float-right"><b>400 of 800 Items</b></div>
+                      <div class="small float-right"><b>100 of 800 books</b></div>
                     </div>
                     <div class="progress" style="height: 12px;">
                       <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
@@ -174,7 +174,7 @@
                   </div>
                   <div class="mb-3">
                     <div class="small text-gray-500">
-                      <div class="small float-right"><b>200 of 800 Items</b></div>
+                      <div class="small float-right"><b>150 of 800 books</b></div>
                     </div>
                     <div class="progress" style="height: 12px;">
                       <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30"
